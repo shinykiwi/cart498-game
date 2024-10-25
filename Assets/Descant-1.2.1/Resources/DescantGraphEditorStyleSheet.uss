@@ -1,0 +1,476 @@
+:root {
+    --descant-color-background: #2b2b2b;
+    --descant-color-default: rgba(51, 51, 51, 0.4);
+    --descant-color-light: rgba(51, 51, 51, 1);
+    --descant-color-bright: rgb(140, 140, 140);
+
+    --choice-highlight: lightskyblue;
+    --choice-background: rgba(90, 137, 166, 0.4);
+
+    --response-highlight: darkgoldenrod;
+    --response-background: rgba(164, 123, 19, 0.4);
+
+    --if-highlight: darkorchid;
+    --if-background: rgba(153, 50, 204, 0.4);
+
+    --start-highlight: mediumseagreen;
+    --start-background: rgba(46, 134, 85, 0.4);
+
+    --end-highlight: firebrick;
+    --end-background: rgba(121, 23, 23, 0.4);
+
+    --unsaved: lightcoral;
+}
+
+GridBackground {
+    --grid-background-color: var(--descant-color-background);
+
+    --line-color: var(--descant-color-default);
+    --thick-line-color: var(--descant-color-light);
+
+    --spacing: 25;
+}
+
+Toolbar {
+    height: auto;
+    padding: 8px;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+Toolbar .toolbar-title {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+    
+    height: 30px;
+}
+
+.version {
+    margin-left: 15px;
+    
+    color: var(--descant-color-bright);
+    font-size: 12px;
+}
+
+Toolbar .toolbar-filename {
+    font-size: 18px;
+}
+
+Toolbar .toolbar-unsaved {
+    font-size: 40px;
+    color: var(--unsaved);
+    margin-top: -6px;
+    margin-left: 8px;
+}
+
+Toolbar .save-section {
+    flex-direction: row;
+    align-items: center;
+}
+
+Toolbar Button {
+    font-size: 13px;
+    padding: 10px;
+}
+
+Toolbar Toggle {
+    align-items: center;
+}
+
+Toolbar Toggle Label {
+    min-width: 0;
+    margin-left: 10px;
+
+    font-size: 13px;
+}
+
+Toolbar Toggle VisualElement {
+    margin: 2px;
+}
+
+Toolbar TextField {
+    width: 80px;
+}
+
+Toolbar TextField Label {
+    min-width: 15px;
+    font-size: 13px;
+}
+
+Toolbar TextField TextElement {
+    margin: 2px;
+}
+
+Toolbar .search {
+    width: 95%;
+    height: 20px;
+    
+    margin-top: 10px;
+}
+
+.node_component_dropdown {
+    margin-bottom: 4px;
+}
+
+.node_component_dropdown .unity-text-element {
+    color: var(--descant-color-background);
+    font-size: 18px;
+}
+
+DescantChoiceNode .node_component_dropdown VisualElement {
+    background-color: var(--choice-highlight);
+}
+
+DescantResponseNode .node_component_dropdown VisualElement {
+    background-color: var(--response-highlight);
+}
+
+DescantIfNode .node_component_dropdown VisualElement {
+    background-color: var(--if-highlight);
+}
+
+DescantStartNode .node_component_dropdown VisualElement {
+    background-color: var(--start-highlight);
+}
+
+DescantEndNode .node_component_dropdown VisualElement {
+    background-color: var(--end-highlight);
+}
+
+.node_component_dropdown .unity-base-popup-field__arrow {
+    background-color: var(--descant-color-light);
+}
+
+DescantChoiceNode .add_choice {
+    margin: 5px;
+    padding: 3px;
+    
+    color: #d2d2d2;
+    
+    background-color: var(--descant-color-light);
+}
+
+DescantChoiceNode .node_component_dropdown {
+    background-color: var(--choice-highlight);
+    color: var(--descant-color-background);
+}
+
+DescantResponseNode .node_component_dropdown {
+    background-color: var(--response-highlight);
+    color: var(--descant-color-background);
+}
+
+DescantIfNode .node_component_dropdown {
+    background-color: var(--if-highlight);
+    color: var(--descant-color-background);
+}
+
+DescantStartNode .node_component_dropdown {
+    background-color: var(--start-highlight);
+    color: var(--descant-color-background);
+}
+
+DescantEndNode .node_component_dropdown {
+    background-color: var(--end-highlight);
+    color: var(--descant-color-background);
+}
+
+DescantNodeGroup TextField TextElement {
+    font-size: 20px;
+}
+
+DescantNodeGroup Button {
+    height: 25px;
+    width: 25px;
+
+    font-size: 18px;
+}
+
+DescantChoiceNode #title, DescantChoiceNode #contents {
+    background-color: var(--choice-background);
+}
+
+DescantResponseNode #title, DescantResponseNode #contents {
+    background-color: var(--response-background);
+}
+
+DescantIfNode #title, DescantIfNode #contents {
+    background-color: var(--if-background);
+}
+
+DescantStartNode #title, DescantStartNode #contents {
+    background-color: var(--start-background);
+}
+
+DescantEndNode #title, DescantEndNode #contents {
+    background-color: var(--end-background);
+}
+
+#title .names {
+    flex-direction: row;
+    align-items: center;
+}
+
+.names .node-name {
+    font-size: 20px;
+    margin: 10px;
+}
+
+#title Button {
+    align-self: center;
+    height: 25px;
+    width: 25px;
+
+    font-size: 18px;
+}
+
+DescantChoiceNode .node-name {
+    color: var(--choice-highlight);
+}
+
+DescantResponseNode .node-name {
+    color: var(--response-highlight);
+}
+
+DescantIfNode .node-name {
+    color: var(--if-highlight);
+}
+
+DescantStartNode .node-name {
+    color: var(--start-highlight);
+}
+
+DescantEndNode .node-name {
+    color: var(--end-highlight);
+}
+
+#input, #output {
+    justify-content: center;
+}
+
+.names TextField {
+    width: 80%;
+}
+
+DescantStartNode .names TextField, DescantEndNode .names TextField {
+    width: 70%;
+}
+
+.names TextField TextElement {
+    font-size: 20px;
+}
+
+DescantChoiceNode #output Label {
+    font-size: 15px;
+}
+
+DescantChoiceNode #output {
+    height: auto;
+}
+
+DescantChoiceNode #output Port {
+    height: auto;
+}
+
+DescantChoiceNode #output TextField {
+    width: 350px;
+}
+
+DescantChoiceNode #output TextField TextElement {
+    font-size: 15px;
+    margin: 2px;
+}
+
+DescantChoiceNode #output .choice_number {
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+DescantChoiceNode #contents Button,
+DescantResponseNode #contents Button,
+DescantIfNode #contents Button,
+DescantStartNode #contents Button,
+DescantEndNode #contents Button {
+    font-size: 18px;
+}
+
+DescantChoiceNode #contents #output Button {
+    height: 25px;
+    width: 25px;
+
+    font-size: 18px;
+}
+
+DescantResponseNode #contents .response {
+    min-height: 90px;
+    padding: 5px;
+    white-space: normal;
+}
+
+DescantResponseNode #contents .response TextElement {
+    font-size: 18px;
+    margin: 2px;
+}
+
+DescantIfNode #contents #output Port {
+    margin: 8px;
+}
+
+DescantIfNode #contents #output TextElement {
+    font-size: 18px;
+}
+
+.node_component {
+    flex-direction: column;
+
+    margin: 5px;
+    margin-bottom: 15px;
+}
+
+.node_component .node_component_name {
+    min-width: 40px;
+}
+
+.node_component .node_component_group {
+    flex-direction: column;
+    
+    margin-top: 15px;
+    padding: 5px;
+
+    background-color: var(--descant-color-light);
+}
+
+.node_component .node_component_row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.node_component .node_component_row_order {
+    min-width: 25px;
+    height: 25px;
+    
+    padding: 2px;
+}
+
+.node_component .node_component_row_order TextInput {
+    min-width: 0;
+}
+
+.node_component .node_component_row_order TextElement {
+    padding: 2px;
+}
+
+.node_component .node_component_group_name {
+    background-color: var(--descant-color-background);
+    margin: 5px;
+}
+
+.node_component Button {
+    align-self: center;
+}
+
+.node_component TextField {
+    height: 35px;
+    
+    padding: 5px;
+    
+    background-color: var(--descant-color-background);
+}
+
+.node_component FloatField,
+.node_component IntegerField,
+.node_component Toggle,
+.node_component Vector2Field,
+.node_component Vector3Field,
+.node_component ColorField,
+.node_component ObjectField,
+.node_component EnumField {
+    height: 35px;
+    width: auto;
+
+    padding: 5px;
+
+    background-color: var(--descant-color-background);
+}
+
+.node_component IntegerField,
+.node_component Toggle,
+.node_component ColorField,
+.node_component ObjectField,
+.node_component EnumField {
+    align-items: center;
+}
+
+.node_component Vector2Field FloatField,
+.node_component Vector3Field FloatField {
+    height: 30px;
+    
+    min-width: 50px;
+}
+
+.node_component ColorField IMGUIContainer {
+    width: 150px;
+}
+
+.node_component ObjectField ObjectFieldDisplay {
+    max-width: 150px;
+}
+
+.node_component EnumField VisualElement {
+    background-color: var(--descant-color-light);
+}
+
+.node_component TextElement {
+    margin: 2px;
+    padding: 5px;
+
+    font-size: 15px;
+    -unity-text-align: middle-center;
+
+    background-color: var(--descant-color-light);
+}
+
+.node_component TextField TextElement {
+    font-size: 15px;
+}
+
+.node_component Label {
+    min-width: 0;
+
+    font-size: 12px;
+    
+    -unity-text-align: middle-right;
+}
+
+.node_component TextInput {
+    min-width: 40px;
+}
+
+.comments {
+    min-height: 30px;
+    
+    margin: 8px;
+    
+    white-space: normal;
+}
+
+.comments Label {
+    min-width: 90px;
+    
+    font-size: 15px;
+}
+
+.comments TextInput {
+    padding: 5px;
+}
+
+.comments TextElement {
+    font-size: 15px;
+    color: var(--descant-color-bright);
+}
