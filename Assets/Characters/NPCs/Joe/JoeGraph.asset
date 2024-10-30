@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Autosave: 0
   Advanced: 1
-  PannedPosition: {x: 92, y: 322, z: 0}
-  ScrolledScale: {x: 0.25, y: 0.25, z: 1}
+  PannedPosition: {x: 395, y: 209, z: 0}
+  ScrolledScale: {x: 0.32690176, y: 0.32690176, z: 1}
   Typewriter: 1
   TypewriterSpeed: 1
   ChoiceNodeID: 7
@@ -61,8 +61,7 @@ MonoBehaviour:
     Position: {x: 400, y: -15}
     NodeComponents: []
     Comments: 
-    Response: Welcome to <color="blue">Descant</color>! How can I help you? Your
-      health is {Test_Player:Health}, by the way.
+    Response: Hey what's up?
   - Name: ResponseNode
     Type: Response
     ID: 1
@@ -167,7 +166,7 @@ MonoBehaviour:
     Comments: 
   - Name: QuickEnding
     ID: 2
-    Position: {x: 2892, y: -216}
+    Position: {x: 2891.9995, y: -215.99997}
     Nodes:
     - Choice
     - End
@@ -175,7 +174,7 @@ MonoBehaviour:
     Comments: 
   - Name: LongEnding
     ID: 3
-    Position: {x: 2288, y: 228}
+    Position: {x: 2288, y: 228.00002}
     Nodes:
     - Choice
     - Response
@@ -184,7 +183,7 @@ MonoBehaviour:
     Comments: 
   - Name: SecretEnding
     ID: 4
-    Position: {x: 2892, y: -671}
+    Position: {x: 2891.9995, y: -671}
     Nodes:
     - Response
     - End

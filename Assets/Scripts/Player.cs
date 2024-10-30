@@ -1,32 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using StarterAssets;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
+
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private Canvas HUD;
+    [SerializeField] private LayerMask layer;
+    
+    private RaycastHit hitData; 
+    private ThirdPersonController movement;
+    private StarterAssetsInputs input;
+    
     void Start()
     {
         HUD.enabled = false;
         input = GetComponent<StarterAssetsInputs>();
+        movement = GetComponent<ThirdPersonController>();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
-
-    // Update is called once per frame
-
-    [SerializeField]
-    private Canvas HUD;
     
-    RaycastHit hitData;
-    [SerializeField]
-    private LayerMask layer;
-    
-    private StarterAssetsInputs input;
     void Update()
     {
         FireRay();
-       
     }
     
     void FireRay()
@@ -39,10 +35,8 @@ public class Player : MonoBehaviour
         
         if (Physics.Raycast(ray, out hitData, 5, layer))
         {
-            if (hitData.collider.GetComponentInParent<Door>())
+            if (hitData.collider.GetComponentInParent<Door>() is { } door)
             {
-                Door door = hitData.collider.GetComponentInParent<Door>();
-               
                 HUD.enabled = true;
 
                 // If E is pressed then do something
@@ -53,8 +47,20 @@ public class Player : MonoBehaviour
                     {
                         door.Open(); 
                     }
-                   
-                    
+                }
+            }
+            else if (hitData.collider.GetComponentInParent<Npc>() is { } npc)
+            {
+                HUD.enabled = true;
+                
+                // If E is pressed then do something
+                if (input.interact)
+                {
+                    if (!npc.IsInConversation())
+                    {
+                        ToggleMovement();
+                        npc.TalkTo(); // calls descant dialogue trigger to display
+                    }
                 }
             }
         }
@@ -62,6 +68,30 @@ public class Player : MonoBehaviour
         {
             HUD.enabled = false;
         }
+    }
+
+    void ToggleMovement()
+    {
+        ToggleHUD();
+        Cursor.visible = !Cursor.visible;
+
+        if (Cursor.visible)
+        {
+            Debug.Log("cursor visible");
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+        else
+        {
+            Debug.Log("cursor not visible");
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        
+        
+    }
+
+    void ToggleHUD()
+    {
+        HUD.enabled = !HUD.enabled;
     }
     
     
