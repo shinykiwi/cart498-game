@@ -17,7 +17,7 @@ MonoBehaviour:
   PannedPosition: {x: 395, y: 209, z: 0}
   ScrolledScale: {x: 0.32690176, y: 0.32690176, z: 1}
   Typewriter: 1
-  TypewriterSpeed: 1
+  TypewriterSpeed: 2
   ChoiceNodeID: 7
   ResponseNodeID: 8
   IfNodeID: 2

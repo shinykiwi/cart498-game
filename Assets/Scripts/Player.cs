@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private RaycastHit hitData; 
     private ThirdPersonController movement;
     private StarterAssetsInputs input;
+    private bool isInConversation = false;
     
     void Start()
     {
@@ -37,7 +38,8 @@ public class Player : MonoBehaviour
         {
             if (hitData.collider.GetComponentInParent<Door>() is { } door)
             {
-                HUD.enabled = true;
+                HUD.enabled = !isInConversation;
+                Debug.Log(isInConversation);
 
                 // If E is pressed then do something
                 if (input.interact)
@@ -51,7 +53,7 @@ public class Player : MonoBehaviour
             }
             else if (hitData.collider.GetComponentInParent<Npc>() is { } npc)
             {
-                HUD.enabled = true;
+                HUD.enabled = !isInConversation;
                 
                 // If E is pressed then do something
                 if (input.interact)
@@ -60,6 +62,8 @@ public class Player : MonoBehaviour
                     {
                         ToggleMovement();
                         npc.TalkTo(); // calls descant dialogue trigger to display
+                        isInConversation = true;
+                        ToggleHUD();
                     }
                 }
             }
