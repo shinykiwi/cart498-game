@@ -40,7 +40,10 @@ public class Player : MonoBehaviour
         
         if (Physics.Raycast(ray, out hitData, 5, layer))
         {
-            hud.Show();
+            if (!talking)
+            {
+                hud.Show();
+            }
             if (hitData.collider.GetComponentInParent<Door>() is { } door)
             {
                 hud.SetActionText(door.ToString());
