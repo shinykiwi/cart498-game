@@ -1,3 +1,4 @@
+using Cinemachine;
 using StarterAssets;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Canvas HUD;
     [SerializeField] private LayerMask layer;
+    [SerializeField] private CinemachineVirtualCamera npcLookAtCamera;
     
     private RaycastHit hitData; 
     private ThirdPersonController movement;
@@ -64,6 +66,8 @@ public class Player : MonoBehaviour
                         npc.TalkTo(); // calls descant dialogue trigger to display
                         isInConversation = true;
                         ToggleHUD();
+                        //npcLookAtCamera.LookAt = npc.transform;
+                        npcLookAtCamera.enabled = true;
                     }
                 }
             }

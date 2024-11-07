@@ -7,6 +7,7 @@ using UnityEngine;
 public class Npc : MonoBehaviour
 {
     private DescantDialogueTrigger dialogueTrigger;
+    private DescantDialogueUI dialogueUI;
     private bool isInConversation = false;
 
     [SerializeField] private string name = "Joe";
@@ -14,6 +15,8 @@ public class Npc : MonoBehaviour
     private void Start()
     {
         dialogueTrigger = GetComponent<DescantDialogueTrigger>();
+        dialogueUI = dialogueTrigger.GetComponentInChildren<DescantDialogueUI>();
+        
     }
 
     public void TalkTo()
@@ -29,5 +32,26 @@ public class Npc : MonoBehaviour
     public bool IsInConversation()
     {
         return isInConversation;
+    }
+
+    private void OnEnable()
+    {
+        if (dialogueUI)
+        {
+            dialogueUI.OnEnd += ConvoEnded;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (dialogueUI)
+        {
+            dialogueUI.OnEnd -= ConvoEnded;
+        }
+    }
+
+    private void ConvoEnded()
+    {
+        isInConversation = false;
     }
 }
