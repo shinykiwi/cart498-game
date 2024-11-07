@@ -11,7 +11,7 @@ public class HUD : MonoBehaviour
 
     private void Start()
     {
-        canvas = GetComponentInChildren<Canvas>();
+        canvas = GetComponent<Canvas>();
     }
 
     public void SetActionText(string s)

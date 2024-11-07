@@ -19,7 +19,6 @@ public class Player : MonoBehaviour
     
     void Start()
     {
-        hud.Hide();
         input = GetComponent<StarterAssetsInputs>();
         movement = GetComponent<ThirdPersonController>();
         Cursor.visible = false;
