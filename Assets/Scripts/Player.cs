@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     private StarterAssetsInputs input;
 
     private bool talking = false;
+
+    private Npc lastTalkedTo = null;
     
     void Start()
     {
@@ -44,7 +46,7 @@ public class Player : MonoBehaviour
             {
                 hud.SetActionText(door.ToString());
                 // If E is pressed then do something
-                if (input.interact)
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     // If the door is not already being used
                     if (!door.InUse())
@@ -55,16 +57,25 @@ public class Player : MonoBehaviour
             }
             else if (hitData.collider.GetComponentInParent<Npc>() is { } npc)
             {
-                npc.OnEnd += DoneTalking;
+                
                 hud.SetActionText(npc.ToString());
+                
                 // If E is pressed then do something
-                if (input.interact)
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (!talking)
+                    Debug.Log("KEY PRESSED");
+                    if (talking != true)
                     {
+                        if (lastTalkedTo == null)
+                        {
+                            lastTalkedTo = npc;
+                            
+                        }
+                        npc.OnEnd += DoneTalking;
+                        
                         ToggleTalking();
                         npc.TalkTo(); // calls descant dialogue trigger to display
-                        talking = true;
+                        Debug.Log(talking);
                     }
                     
                 }
@@ -72,6 +83,10 @@ public class Player : MonoBehaviour
             else if (hitData.collider.GetComponentInParent<Letter>() is { } letter)
             {
                 hud.SetActionText(letter.ToString());
+            }
+            else
+            {
+                hud.Hide();
             }
             
         }
@@ -83,16 +98,16 @@ public class Player : MonoBehaviour
 
     void ToggleTalking()
     {
-        Debug.Log("toggle talking");
+        talking = !talking;
         hud.Toggle();
         npcLookAtCamera.enabled = !npcLookAtCamera.enabled;
         Cursor.visible = !Cursor.visible;
         Cursor.lockState = Cursor.visible ? CursorLockMode.Confined : CursorLockMode.Locked;
-        
     }
 
     void DoneTalking()
     {
         ToggleTalking();
+        lastTalkedTo.OnEnd -= DoneTalking;
     }
 }
