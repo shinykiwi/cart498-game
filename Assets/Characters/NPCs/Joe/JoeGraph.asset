@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Autosave: 0
   Advanced: 1
-  PannedPosition: {x: 395, y: 209, z: 0}
-  ScrolledScale: {x: 0.32690176, y: 0.32690176, z: 1}
+  PannedPosition: {x: -809, y: 385, z: 0}
+  ScrolledScale: {x: 0.49717674, y: 0.49717674, z: 1}
   Typewriter: 1
   TypewriterSpeed: 2
   ChoiceNodeID: 7
-  ResponseNodeID: 8
+  ResponseNodeID: 9
   IfNodeID: 2
   EndNodeID: 8
   GroupID: 5
@@ -30,14 +30,13 @@ MonoBehaviour:
     Position: {x: 973, y: -15}
     NodeComponents:
     - rid: 7632772672291864709
-    - rid: 2479963032036049265
     - rid: 7632772672291864714
     Comments: 
     Choices:
-    - Where can I download Descant?
-    - Where is the Component documentation?
-    - Who can I contact for help?
-    - Nevermind, I don't want help...
+    - What's your name?
+    - What is this place?
+    - Where do I go?
+    - See you later.
   - Name: ChoiceNode
     Type: Choice
     ID: 2
@@ -45,7 +44,8 @@ MonoBehaviour:
     NodeComponents: []
     Comments: 
     Choices:
-    - Neat!
+    - ....
+    - Well??
   - Name: ChoiceNode
     Type: Choice
     ID: 3
@@ -61,36 +61,35 @@ MonoBehaviour:
     Position: {x: 400, y: -15}
     NodeComponents: []
     Comments: 
-    Response: Hey what's up?
+    Response: Welcome to the game!
   - Name: ResponseNode
     Type: Response
     ID: 1
-    Position: {x: 1632, y: -291}
+    Position: {x: 1632, y: -330}
     NodeComponents: []
     Comments: 
-    Response: 'You can download it at: <i>https://github.com/owmacohe/descant</i>.
-      It''s free!'
+    Response: No clue!
   - Name: ResponseNode
     Type: Response
     ID: 2
     Position: {x: 1632, y: 0}
     NodeComponents: []
     Comments: 
-    Response: 'You can find the documentation at: <i>https://omch.tech/descant</i>.'
+    Response: I'm so glad you asked!
   - Name: ResponseNode
     Type: Response
     ID: 3
     Position: {x: 1632, y: 288}
     NodeComponents: []
     Comments: 
-    Response: You can contact me by email at <i>omch@pm.me</i> or on Discord at <i>omch</i>.
+    Response: That's for you to find out. Go on, go explore!
   - Name: ResponseNode
     Type: Response
     ID: 4
-    Position: {x: 2917, y: 287}
+    Position: {x: 2891, y: 287}
     NodeComponents: []
     Comments: 
-    Response: Bye!
+    Response: Come back to me once you've looked around.
   - Name: ResponseNode
     Type: Response
     ID: 6
@@ -98,6 +97,13 @@ MonoBehaviour:
     NodeComponents: []
     Comments: 
     Response: I like you a lot, But I like my {Test_NPC:Money} dollars more!
+  - Name: ResponseNode
+    Type: Response
+    ID: 8
+    Position: {x: 3502, y: -210}
+    NodeComponents: []
+    Comments: 
+    Response: I would also like to know. Tell me if you find out!
   IfNodes:
   - Name: IfNode
     Type: If
@@ -119,7 +125,7 @@ MonoBehaviour:
   - Name: EndNode
     Type: End
     ID: 0
-    Position: {x: 3517, y: -157}
+    Position: {x: 4060, y: -223}
     NodeComponents:
     - rid: 7632772672291864711
     Comments: 
@@ -147,7 +153,7 @@ MonoBehaviour:
   Groups:
   - Name: Answers
     ID: 0
-    Position: {x: 1607, y: -350}
+    Position: {x: 1606.9999, y: -388.99997}
     Nodes:
     - Response
     - Response
@@ -157,7 +163,7 @@ MonoBehaviour:
     Comments: 
   - Name: Start
     ID: 1
-    Position: {x: -54, y: -74}
+    Position: {x: -53.99994, y: -74}
     Nodes:
     - Response
     - Start
@@ -166,15 +172,16 @@ MonoBehaviour:
     Comments: 
   - Name: QuickEnding
     ID: 2
-    Position: {x: 2891.9995, y: -215.99997}
+    Position: {x: 2891.9998, y: -281.99994}
     Nodes:
     - Choice
     - End
-    NodeIDs: 0200000000000000
+    - Response
+    NodeIDs: 020000000000000008000000
     Comments: 
   - Name: LongEnding
     ID: 3
-    Position: {x: 2288, y: 228.00002}
+    Position: {x: 2288, y: 228}
     Nodes:
     - Choice
     - Response
@@ -183,7 +190,7 @@ MonoBehaviour:
     Comments: 
   - Name: SecretEnding
     ID: 4
-    Position: {x: 2891.9995, y: -671}
+    Position: {x: 2891.9998, y: -670.99994}
     Nodes:
     - Response
     - End
@@ -213,8 +220,8 @@ MonoBehaviour:
   - From: Choice
     FromID: 2
     FromIndex: 1
-    To: End
-    ToID: 0
+    To: Response
+    ToID: 8
   - From: Choice
     FromID: 3
     FromIndex: 1
@@ -228,8 +235,8 @@ MonoBehaviour:
   - From: Response
     FromID: 1
     FromIndex: 0
-    To: If
-    ToID: 0
+    To: End
+    ToID: 5
   - From: Response
     FromID: 2
     FromIndex: 0
@@ -250,6 +257,11 @@ MonoBehaviour:
     FromIndex: 0
     To: End
     ToID: 5
+  - From: Response
+    FromID: 8
+    FromIndex: 0
+    To: End
+    ToID: 0
   - From: If
     FromID: 0
     FromIndex: 1
@@ -268,16 +280,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 2479963032036049265
-      type: {class: LockedChoice, ns: Descant.Components, asm: omch.descant.components}
-      data:
-        Collapsed: 0
-        Actor: {fileID: 11400000, guid: aa50e7fd76a0a8c4ba679f3a8ac2fe0e, type: 2}
-        ChoiceNumber: 4
-        VariableType: 0
-        VariableName: WantsHelp
-        ComparisonType: 3
-        Comparison: 1
     - rid: 2479963267225879387
       type: {class: IfComponent, ns: Descant.Components, asm: omch.descant.components}
       data:

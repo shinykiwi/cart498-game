@@ -57,13 +57,11 @@ public class Player : MonoBehaviour
             }
             else if (hitData.collider.GetComponentInParent<Npc>() is { } npc)
             {
-                
                 hud.SetActionText(npc.ToString());
                 
                 // If E is pressed then do something
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    Debug.Log("KEY PRESSED");
                     if (talking != true)
                     {
                         if (lastTalkedTo == null)
