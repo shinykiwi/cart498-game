@@ -8,15 +8,14 @@ public class Npc : MonoBehaviour
 {
     private DescantDialogueTrigger dialogueTrigger;
     private DescantDialogueUI dialogueUI;
-    private bool isInConversation = false;
 
     [SerializeField] private string name = "Joe";
-
-    private void Start()
+    
+    public event Action OnEnd;
+    private void Awake()
     {
         dialogueTrigger = GetComponent<DescantDialogueTrigger>();
         dialogueUI = dialogueTrigger.GetComponentInChildren<DescantDialogueUI>();
-        
     }
 
     public void TalkTo()
@@ -24,14 +23,13 @@ public class Npc : MonoBehaviour
         if (dialogueTrigger)
         {
             dialogueTrigger.Display();
-            isInConversation = true;
         }
-        
     }
 
-    public bool IsInConversation()
+    private void ConvoEnded()
     {
-        return isInConversation;
+        Debug.Log("convo ended!");
+        OnEnd?.Invoke();
     }
 
     private void OnEnable()
@@ -40,6 +38,7 @@ public class Npc : MonoBehaviour
         {
             dialogueUI.OnEnd += ConvoEnded;
         }
+        
     }
 
     private void OnDisable()
@@ -48,10 +47,11 @@ public class Npc : MonoBehaviour
         {
             dialogueUI.OnEnd -= ConvoEnded;
         }
+       
     }
 
-    private void ConvoEnded()
+    public override string ToString()
     {
-        isInConversation = false;
+        return "Talk to " + name;
     }
 }

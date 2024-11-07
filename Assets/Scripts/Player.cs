@@ -5,18 +5,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Canvas HUD;
+    [SerializeField] private HUD hud;
     [SerializeField] private LayerMask layer;
     [SerializeField] private CinemachineVirtualCamera npcLookAtCamera;
     
     private RaycastHit hitData; 
     private ThirdPersonController movement;
     private StarterAssetsInputs input;
-    private bool isInConversation = false;
+
+    private bool talking = false;
     
     void Start()
     {
-        HUD.enabled = false;
+        hud.Hide();
         input = GetComponent<StarterAssetsInputs>();
         movement = GetComponent<ThirdPersonController>();
         Cursor.visible = false;
@@ -38,11 +39,10 @@ public class Player : MonoBehaviour
         
         if (Physics.Raycast(ray, out hitData, 5, layer))
         {
+            hud.Show();
             if (hitData.collider.GetComponentInParent<Door>() is { } door)
             {
-                HUD.enabled = !isInConversation;
-                Debug.Log(isInConversation);
-
+                hud.SetActionText(door.ToString());
                 // If E is pressed then do something
                 if (input.interact)
                 {
@@ -55,52 +55,44 @@ public class Player : MonoBehaviour
             }
             else if (hitData.collider.GetComponentInParent<Npc>() is { } npc)
             {
-                HUD.enabled = !isInConversation;
-                
+                npc.OnEnd += DoneTalking;
+                hud.SetActionText(npc.ToString());
                 // If E is pressed then do something
                 if (input.interact)
                 {
-                    if (!npc.IsInConversation())
+                    if (!talking)
                     {
-                        ToggleMovement();
+                        ToggleTalking();
                         npc.TalkTo(); // calls descant dialogue trigger to display
-                        isInConversation = true;
-                        ToggleHUD();
-                        //npcLookAtCamera.LookAt = npc.transform;
-                        npcLookAtCamera.enabled = true;
+                        talking = true;
                     }
+                    
                 }
             }
+            else if (hitData.collider.GetComponentInParent<Letter>() is { } letter)
+            {
+                hud.SetActionText(letter.ToString());
+            }
+            
         }
         else
         {
-            HUD.enabled = false;
+            hud.Hide();
         }
     }
 
-    void ToggleMovement()
+    void ToggleTalking()
     {
-        ToggleHUD();
+        Debug.Log("toggle talking");
+        hud.Toggle();
+        npcLookAtCamera.enabled = !npcLookAtCamera.enabled;
         Cursor.visible = !Cursor.visible;
-
-        if (Cursor.visible)
-        {
-            Debug.Log("cursor visible");
-            Cursor.lockState = CursorLockMode.Confined;
-        }
-        else
-        {
-            Debug.Log("cursor not visible");
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        
+        Cursor.lockState = Cursor.visible ? CursorLockMode.Confined : CursorLockMode.Locked;
         
     }
 
-    void ToggleHUD()
+    void DoneTalking()
     {
-        HUD.enabled = !HUD.enabled;
+        ToggleTalking();
     }
-    
-    
 }

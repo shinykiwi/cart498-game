@@ -107,4 +107,9 @@ public class Door : Interactable
             
         }
     }
+    
+    public override string ToString()
+    {
+        return destination.name;
+    }
 }
