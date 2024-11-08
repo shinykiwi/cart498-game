@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 25a0b1bf05fe58d4e82d02489970be63
+guid: ce45a51b6b303e44489e14a0182c55a3
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Signika Negative
+  - Faculty Glyphic
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

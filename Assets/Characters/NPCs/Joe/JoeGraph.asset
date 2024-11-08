@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Autosave: 0
   Advanced: 1
-  PannedPosition: {x: -809, y: 385, z: 0}
-  ScrolledScale: {x: 0.49717674, y: 0.49717674, z: 1}
+  PannedPosition: {x: -665, y: 260, z: 0}
+  ScrolledScale: {x: 1, y: 1, z: 1}
   Typewriter: 1
   TypewriterSpeed: 2
   ChoiceNodeID: 7
@@ -33,10 +33,8 @@ MonoBehaviour:
     - rid: 7632772672291864714
     Comments: 
     Choices:
-    - What's your name?
-    - What is this place?
-    - Where do I go?
-    - See you later.
+    - I'm here to pick up today's mail.
+    - Talk to you later.
   - Name: ChoiceNode
     Type: Choice
     ID: 2
@@ -61,7 +59,7 @@ MonoBehaviour:
     Position: {x: 400, y: -15}
     NodeComponents: []
     Comments: 
-    Response: Welcome to the game!
+    Response: What can I do for you, sir?
   - Name: ResponseNode
     Type: Response
     ID: 1
@@ -163,7 +161,7 @@ MonoBehaviour:
     Comments: 
   - Name: Start
     ID: 1
-    Position: {x: -53.99994, y: -74}
+    Position: {x: -54, y: -74}
     Nodes:
     - Response
     - Start
@@ -172,7 +170,7 @@ MonoBehaviour:
     Comments: 
   - Name: QuickEnding
     ID: 2
-    Position: {x: 2891.9998, y: -281.99994}
+    Position: {x: 2891.9998, y: -282}
     Nodes:
     - Choice
     - End
@@ -181,7 +179,7 @@ MonoBehaviour:
     Comments: 
   - Name: LongEnding
     ID: 3
-    Position: {x: 2288, y: 228}
+    Position: {x: 2287.9998, y: 228}
     Nodes:
     - Choice
     - Response
@@ -206,16 +204,6 @@ MonoBehaviour:
     FromID: 1
     FromIndex: 2
     To: Response
-    ToID: 2
-  - From: Choice
-    FromID: 1
-    FromIndex: 3
-    To: Response
-    ToID: 3
-  - From: Choice
-    FromID: 1
-    FromIndex: 4
-    To: End
     ToID: 2
   - From: Choice
     FromID: 2
