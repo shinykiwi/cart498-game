@@ -1,3 +1,4 @@
+using System.Linq;
 using Cinemachine;
 using StarterAssets;
 using UnityEngine;
@@ -13,12 +14,10 @@ public class Player : MonoBehaviour
     private RaycastHit hitData; 
     private ThirdPersonController movement;
     private StarterAssetsInputs input;
-    
-
     private bool talking = false;
-
     private Npc lastTalkedTo = null;
-    
+
+    private MailBag mailbag = new MailBag();
     void Start()
     {
         input = GetComponent<StarterAssetsInputs>();
@@ -30,6 +29,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         FireRay();
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Debug.Log(mailbag.ToString());
+        }
     }
     
     void FireRay()
@@ -85,7 +88,12 @@ public class Player : MonoBehaviour
             else if (hitData.collider.GetComponentInParent<Letter>() is { } letter)
             {
                 hud.SetActionText(letter.ToString());
-                Debug.Log("HITTTTT");
+
+                // If player presses E
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    mailbag.AddLetter(letter);
+                }
             }
             else
             {
@@ -113,4 +121,6 @@ public class Player : MonoBehaviour
         ToggleTalking();
         lastTalkedTo.OnEnd -= DoneTalking;
     }
+
+    
 }
