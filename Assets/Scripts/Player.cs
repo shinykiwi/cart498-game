@@ -8,10 +8,12 @@ public class Player : MonoBehaviour
     [SerializeField] private HUD hud;
     [SerializeField] private LayerMask layer;
     [SerializeField] private CinemachineVirtualCamera npcLookAtCamera;
+    [SerializeField] private int rayDistance = 5;
     
     private RaycastHit hitData; 
     private ThirdPersonController movement;
     private StarterAssetsInputs input;
+    
 
     private bool talking = false;
 
@@ -36,9 +38,9 @@ public class Player : MonoBehaviour
         RaycastHit hitData;
 
         Physics.Raycast(ray, out hitData);
-        Debug.DrawRay(ray.origin, ray.direction * 5, Color.red);
+        Debug.DrawRay(ray.origin, ray.direction * rayDistance, Color.red);
         
-        if (Physics.Raycast(ray, out hitData, 5, layer))
+        if (Physics.Raycast(ray, out hitData, rayDistance, layer))
         {
             if (!talking)
             {
@@ -83,6 +85,7 @@ public class Player : MonoBehaviour
             else if (hitData.collider.GetComponentInParent<Letter>() is { } letter)
             {
                 hud.SetActionText(letter.ToString());
+                Debug.Log("HITTTTT");
             }
             else
             {

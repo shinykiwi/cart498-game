@@ -38,7 +38,6 @@ public class Npc : MonoBehaviour
         {
             dialogueUI.OnEnd += ConvoEnded;
         }
-        
     }
 
     private void OnDisable()
