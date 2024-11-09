@@ -9,15 +9,13 @@ using UnityEngine.UI;
 
 public class Door : Interactable
 {
-    [SerializeField]
-    private SceneAsset destination;
-
+    [SerializeField] private SceneAsset destination;
     [SerializeField] private AudioSource openDoor;
     [SerializeField] private AudioSource closeDoor;
     [SerializeField] private GameObject fadeCanvas;
     
     private Image image;
-    private float length = 0.5f;
+    private readonly float length = 0.5f;
     private bool isFading = false;
     
     public void Open()
@@ -90,22 +88,6 @@ public class Door : Interactable
         
         SceneManager.LoadScene(destination.name, LoadSceneMode.Single);
         
-    }
-
-    public void OpenDoor()
-    {
-        if (!openDoor.isPlaying)
-        {
-            openDoor.Play();
-        }
-    }
-    public void CloseDoor()
-    {
-        if (!closeDoor.isPlaying)
-        {
-            closeDoor.Play();
-            
-        }
     }
     
     public override string ToString()
