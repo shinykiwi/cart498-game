@@ -124,3 +124,4 @@ MonoBehaviour:
   signatureRequired: 0
   sender: Joe Non
   recipient: Joe Non
+  sprite: {fileID: 21300000, guid: 40566b83f327aea4aac98797ff63ed6e, type: 3}

@@ -17,21 +17,28 @@ public class Player : MonoBehaviour
     private bool talking = false;
     private Npc lastTalkedTo = null;
 
-    private MailBag mailbag = new MailBag();
+    private MailBag mailbag;
+    [SerializeField] private GameObject mailbagObject;
+    
     void Start()
     {
         input = GetComponent<StarterAssetsInputs>();
         movement = GetComponent<ThirdPersonController>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        mailbagObject = Instantiate(mailbagObject);
+        mailbag = mailbagObject.GetComponent<MailBag>();
     }
     
     void Update()
     {
         FireRay();
+        
+        // Bring up the mailbag
         if (Input.GetKeyDown(KeyCode.F))
         {
-            Debug.Log(mailbag.ToString());
+            //ebug.Log(mailbag.ToString());
+            mailbag.Toggle();
         }
     }
     

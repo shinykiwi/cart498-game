@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Autosave: 0
   Advanced: 1
-  PannedPosition: {x: -665, y: 260, z: 0}
+  PannedPosition: {x: -1180, y: 450.5, z: 0}
   ScrolledScale: {x: 1, y: 1, z: 1}
   Typewriter: 1
   TypewriterSpeed: 2
@@ -27,14 +27,14 @@ MonoBehaviour:
   - Name: ChoiceNode
     Type: Choice
     ID: 1
-    Position: {x: 973, y: -15}
+    Position: {x: 945, y: -14}
     NodeComponents:
     - rid: 7632772672291864709
     - rid: 7632772672291864714
     Comments: 
     Choices:
     - I'm here to pick up today's mail.
-    - Talk to you later.
+    - Bye.
   - Name: ChoiceNode
     Type: Choice
     ID: 2
@@ -56,14 +56,14 @@ MonoBehaviour:
   - Name: ResponseNode
     Type: Response
     ID: 0
-    Position: {x: 400, y: -15}
+    Position: {x: 372, y: -14}
     NodeComponents: []
     Comments: 
     Response: What can I do for you, sir?
   - Name: ResponseNode
     Type: Response
     ID: 1
-    Position: {x: 1632, y: -330}
+    Position: {x: 1632, y: -331.5}
     NodeComponents: []
     Comments: 
     Response: No clue!
@@ -115,7 +115,7 @@ MonoBehaviour:
     Name: StartNode
     Type: Start
     ID: 0
-    Position: {x: -29, y: -15}
+    Position: {x: -57, y: -14}
     NodeComponents:
     - rid: 7632772672291864710
     Comments: 
@@ -138,8 +138,7 @@ MonoBehaviour:
     Type: End
     ID: 2
     Position: {x: 1632, y: 581}
-    NodeComponents:
-    - rid: 7632772813772292225
+    NodeComponents: []
     Comments: 
   - Name: EndNode
     Type: End
@@ -151,7 +150,7 @@ MonoBehaviour:
   Groups:
   - Name: Answers
     ID: 0
-    Position: {x: 1606.9999, y: -388.99997}
+    Position: {x: 1607, y: -390}
     Nodes:
     - Response
     - Response
@@ -161,7 +160,7 @@ MonoBehaviour:
     Comments: 
   - Name: Start
     ID: 1
-    Position: {x: -54, y: -74}
+    Position: {x: -82, y: -72.5}
     Nodes:
     - Response
     - Start
@@ -170,7 +169,7 @@ MonoBehaviour:
     Comments: 
   - Name: QuickEnding
     ID: 2
-    Position: {x: 2891.9998, y: -282}
+    Position: {x: 2892, y: -281.5}
     Nodes:
     - Choice
     - End
@@ -179,7 +178,7 @@ MonoBehaviour:
     Comments: 
   - Name: LongEnding
     ID: 3
-    Position: {x: 2287.9998, y: 228}
+    Position: {x: 2288, y: 228.5}
     Nodes:
     - Choice
     - Response
@@ -188,7 +187,7 @@ MonoBehaviour:
     Comments: 
   - Name: SecretEnding
     ID: 4
-    Position: {x: 2891.9998, y: -670.99994}
+    Position: {x: 2892, y: -670.5}
     Nodes:
     - Response
     - End
@@ -203,7 +202,7 @@ MonoBehaviour:
   - From: Choice
     FromID: 1
     FromIndex: 2
-    To: Response
+    To: End
     ToID: 2
   - From: Choice
     FromID: 2
@@ -306,8 +305,3 @@ MonoBehaviour:
       type: {class: RandomizedChoice, ns: Descant.Components, asm: omch.descant.components}
       data:
         Collapsed: 0
-    - rid: 7632772813772292225
-      type: {class: Log, ns: Descant.Components, asm: omch.descant.components}
-      data:
-        Collapsed: 0
-        Message: First ending
