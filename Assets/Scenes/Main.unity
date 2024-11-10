@@ -3670,6 +3670,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1575124660034600076, guid: c66cbe35d11f24a36900990583cd6c64,
         type: 3}
+      propertyPath: contents
+      value: 'Happy Valentines Day
+
+        - Ada'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575124660034600076, guid: c66cbe35d11f24a36900990583cd6c64,
+        type: 3}
       propertyPath: recipient
       value: Jocelyn
       objectReference: {fileID: 0}
@@ -3923,6 +3930,19 @@ PrefabInstance:
         type: 3}
       propertyPath: sender
       value: Isobel Finch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575124660034600076, guid: c66cbe35d11f24a36900990583cd6c64,
+        type: 3}
+      propertyPath: contents
+      value: 'Hey Santi,
+
+        Will you stop by my cottage after work? I have
+        some things that might be of interest.
+
+
+        Yours truly,
+
+        Isobel'
       objectReference: {fileID: 0}
     - target: {fileID: 1575124660034600076, guid: c66cbe35d11f24a36900990583cd6c64,
         type: 3}

@@ -13,6 +13,10 @@ public class Letter : MonoBehaviour
 
     [Tooltip("The person who is meant to receive the mail, first and last name. Leave as null for unknown.")]
     [SerializeField] private string recipient = null;
+
+    [Tooltip("The actual contents of what the letter says.")]
+    [TextArea]
+    [SerializeField] private string contents = null;
     
     [Tooltip("The icon associated with this letter.")]
     [SerializeField] private Sprite sprite;
@@ -84,6 +88,15 @@ public class Letter : MonoBehaviour
     public bool IsSignatureRequired()
     {
         return signatureRequired;
+    }
+
+    /// <summary>
+    /// Gets the contents of the letter (the body).
+    /// </summary>
+    /// <returns>string</returns>
+    public string GetContents()
+    {
+        return contents;
     }
     
     /// <summary>

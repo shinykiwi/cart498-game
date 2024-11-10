@@ -93,6 +93,7 @@ public class MailBag : MonoBehaviour
             letter.gameObject.GetComponent<MeshRenderer>().enabled = false; // make letter invisible
             letter.gameObject.GetComponent<Collider>().enabled = false;
             slots[letterCount].Fill(letter.GetSprite()); // show image in slot
+            DisplayLetterInfo(letterCount);
             letterCount++; // increase counter
             
             UpdateDescantActor();
@@ -130,6 +131,12 @@ public class MailBag : MonoBehaviour
     public void GiveLetter()
     {
         Debug.Log("giving the letter!");
+    }
+
+    private void DisplayLetterInfo(int index)
+    {
+        title.text = letters[index].ToString();
+        paragraph.text = letters[index].GetContents();
     }
 
     private void UpdateDescantActor()
