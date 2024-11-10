@@ -14,49 +14,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Autosave: 0
   Advanced: 1
-  PannedPosition: {x: -1180, y: 450.5, z: 0}
-  ScrolledScale: {x: 1, y: 1, z: 1}
+  PannedPosition: {x: -732, y: 352, z: 0}
+  ScrolledScale: {x: 0.8695652, y: 0.8695652, z: 1}
   Typewriter: 1
   TypewriterSpeed: 2
-  ChoiceNodeID: 7
-  ResponseNodeID: 9
-  IfNodeID: 2
-  EndNodeID: 8
+  ChoiceNodeID: 9
+  ResponseNodeID: 12
+  IfNodeID: 3
+  EndNodeID: 9
   GroupID: 5
   ChoiceNodes:
   - Name: ChoiceNode
     Type: Choice
     ID: 1
-    Position: {x: 945, y: -14}
+    Position: {x: 953.5, y: -108.5}
     NodeComponents:
-    - rid: 7632772672291864709
-    - rid: 7632772672291864714
+    - rid: 5730410717683122197
     Comments: 
     Choices:
     - I'm here to pick up today's mail.
-    - Bye.
+    - '[Give item] There''s a letter for you.'
+    - '[Leave] See you later. '
   - Name: ChoiceNode
     Type: Choice
-    ID: 2
-    Position: {x: 2917, y: -157}
+    ID: 7
+    Position: {x: 2848, y: -598}
     NodeComponents: []
     Comments: 
     Choices:
-    - ....
-    - Well??
-  - Name: ChoiceNode
-    Type: Choice
-    ID: 3
-    Position: {x: 2313, y: 287}
-    NodeComponents: []
-    Comments: 
-    Choices:
-    - Cool!
+    - Sure, thanks.
+    - Sure, what's your name?
   ResponseNodes:
   - Name: ResponseNode
     Type: Response
     ID: 0
-    Position: {x: 372, y: -14}
+    Position: {x: 387, y: -121}
     NodeComponents: []
     Comments: 
     Response: What can I do for you, sir?
@@ -66,86 +58,64 @@ MonoBehaviour:
     Position: {x: 1632, y: -331.5}
     NodeComponents: []
     Comments: 
-    Response: No clue!
+    Response: Ah  right, you're the new deliverer I asked for. Thanks for showing
+      up.
   - Name: ResponseNode
     Type: Response
     ID: 2
     Position: {x: 1632, y: 0}
     NodeComponents: []
     Comments: 
-    Response: I'm so glad you asked!
-  - Name: ResponseNode
-    Type: Response
-    ID: 3
-    Position: {x: 1632, y: 288}
-    NodeComponents: []
-    Comments: 
-    Response: That's for you to find out. Go on, go explore!
-  - Name: ResponseNode
-    Type: Response
-    ID: 4
-    Position: {x: 2891, y: 287}
-    NodeComponents: []
-    Comments: 
-    Response: Come back to me once you've looked around.
+    Response: Oh really? Must have missed that one, thanks!
   - Name: ResponseNode
     Type: Response
     ID: 6
-    Position: {x: 2917, y: -612}
+    Position: {x: 2237, y: -438.5}
     NodeComponents: []
     Comments: 
-    Response: I like you a lot, But I like my {Test_NPC:Money} dollars more!
+    Response: I'm still processing today's mail, so in the meantime could you grab
+      those older letters there and deliver them?
   - Name: ResponseNode
     Type: Response
-    ID: 8
-    Position: {x: 3502, y: -210}
+    ID: 10
+    Position: {x: 3468.5, y: -612}
     NodeComponents: []
     Comments: 
-    Response: I would also like to know. Tell me if you find out!
-  IfNodes:
-  - Name: IfNode
-    Type: If
-    ID: 0
-    Position: {x: 2313, y: -505}
+    Response: My name's Santi Reed. It's a pleasure to meet you.
+  - Name: ResponseNode
+    Type: Response
+    ID: 11
+    Position: {x: 4002, y: -612}
     NodeComponents: []
     Comments: 
-    IfComponent:
-      rid: 2479963267225879387
+    Response: Come back to me once you've done those letters.
+  IfNodes: []
   StartNode:
     Name: StartNode
     Type: Start
     ID: 0
-    Position: {x: -57, y: -14}
-    NodeComponents:
-    - rid: 7632772672291864710
+    Position: {x: -42, y: -121}
+    NodeComponents: []
     Comments: 
   EndNodes:
   - Name: EndNode
     Type: End
-    ID: 0
-    Position: {x: 4060, y: -223}
-    NodeComponents:
-    - rid: 7632772672291864711
-    Comments: 
-  - Name: EndNode
-    Type: End
-    ID: 1
-    Position: {x: 3517, y: 287}
-    NodeComponents:
-    - rid: 7632772672291864712
-    Comments: 
-  - Name: EndNode
-    Type: End
     ID: 2
-    Position: {x: 1632, y: 581}
+    Position: {x: 1632, y: 330}
     NodeComponents: []
     Comments: 
   - Name: EndNode
     Type: End
     ID: 5
-    Position: {x: 3517, y: -612}
+    Position: {x: 4601, y: -655.5}
+    NodeComponents: []
+    Comments: 
+  - Name: EndNode
+    Type: End
+    ID: 8
+    Position: {x: 2286, y: 0}
     NodeComponents:
-    - rid: 2479963267225879388
+    - rid: 5730410734804800397
     Comments: 
   Groups:
   - Name: Answers
@@ -154,44 +124,17 @@ MonoBehaviour:
     Nodes:
     - Response
     - Response
-    - Response
     - End
-    NodeIDs: 01000000020000000300000002000000
+    NodeIDs: 010000000200000002000000
     Comments: 
   - Name: Start
     ID: 1
-    Position: {x: -82, y: -72.5}
+    Position: {x: -67.00001, y: -179.50002}
     Nodes:
     - Response
     - Start
     - Choice
     NodeIDs: 000000000000000001000000
-    Comments: 
-  - Name: QuickEnding
-    ID: 2
-    Position: {x: 2892, y: -281.5}
-    Nodes:
-    - Choice
-    - End
-    - Response
-    NodeIDs: 020000000000000008000000
-    Comments: 
-  - Name: LongEnding
-    ID: 3
-    Position: {x: 2288, y: 228.5}
-    Nodes:
-    - Choice
-    - Response
-    - End
-    NodeIDs: 030000000400000001000000
-    Comments: 
-  - Name: SecretEnding
-    ID: 4
-    Position: {x: 2892, y: -670.5}
-    Nodes:
-    - Response
-    - End
-    NodeIDs: 0600000005000000
     Comments: 
   Connections:
   - From: Choice
@@ -202,18 +145,23 @@ MonoBehaviour:
   - From: Choice
     FromID: 1
     FromIndex: 2
+    To: Response
+    ToID: 2
+  - From: Choice
+    FromID: 1
+    FromIndex: 3
     To: End
     ToID: 2
   - From: Choice
-    FromID: 2
+    FromID: 7
     FromIndex: 1
     To: Response
-    ToID: 8
+    ToID: 11
   - From: Choice
-    FromID: 3
-    FromIndex: 1
+    FromID: 7
+    FromIndex: 2
     To: Response
-    ToID: 4
+    ToID: 10
   - From: Response
     FromID: 0
     FromIndex: 0
@@ -222,43 +170,28 @@ MonoBehaviour:
   - From: Response
     FromID: 1
     FromIndex: 0
-    To: End
-    ToID: 5
+    To: Response
+    ToID: 6
   - From: Response
     FromID: 2
     FromIndex: 0
-    To: Choice
-    ToID: 2
-  - From: Response
-    FromID: 3
-    FromIndex: 0
-    To: Choice
-    ToID: 3
-  - From: Response
-    FromID: 4
-    FromIndex: 0
     To: End
-    ToID: 1
+    ToID: 8
   - From: Response
     FromID: 6
     FromIndex: 0
-    To: End
-    ToID: 5
+    To: Choice
+    ToID: 7
   - From: Response
-    FromID: 8
+    FromID: 10
+    FromIndex: 0
+    To: Response
+    ToID: 11
+  - From: Response
+    FromID: 11
     FromIndex: 0
     To: End
-    ToID: 0
-  - From: If
-    FromID: 0
-    FromIndex: 1
-    To: Response
-    ToID: 6
-  - From: If
-    FromID: 0
-    FromIndex: 2
-    To: Choice
-    ToID: 2
+    ToID: 5
   - From: Start
     FromID: 0
     FromIndex: 0
@@ -267,41 +200,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 2479963267225879387
-      type: {class: IfComponent, ns: Descant.Components, asm: omch.descant.components}
+    - rid: 5730410717683122197
+      type: {class: LockedChoice, ns: Descant.Components, asm: omch.descant.components}
       data:
         Collapsed: 0
-        Actor: {fileID: 11400000, guid: ac3d79085608abb479f9d21705ca4a30, type: 2}
-        VariableType: 2
-        VariableName: Test_Player
-        ComparisonType: 4
-        Comparison: 0.5
-    - rid: 2479963267225879388
-      type: {class: Log, ns: Descant.Components, asm: omch.descant.components}
+        Actor: {fileID: 11400000, guid: 4da36e944c361124181397e78ca17652, type: 2}
+        ChoiceNumber: 2
+        VariableType: 0
+        VariableName: letterCapacity
+        ComparisonType: 0
+        Comparison: 1
+    - rid: 5730410734804800397
+      type: {class: Event, ns: Descant.Components, asm: omch.descant.components}
       data:
         Collapsed: 0
-        Message: Secret ending
-    - rid: 7632772672291864709
-      type: {class: Log, ns: Descant.Components, asm: omch.descant.components}
-      data:
-        Collapsed: 0
-        Message: First choice!
-    - rid: 7632772672291864710
-      type: {class: Log, ns: Descant.Components, asm: omch.descant.components}
-      data:
-        Collapsed: 0
-        Message: Begin!
-    - rid: 7632772672291864711
-      type: {class: Log, ns: Descant.Components, asm: omch.descant.components}
-      data:
-        Collapsed: 0
-        Message: Quick ending
-    - rid: 7632772672291864712
-      type: {class: Log, ns: Descant.Components, asm: omch.descant.components}
-      data:
-        Collapsed: 0
-        Message: Long ending
-    - rid: 7632772672291864714
-      type: {class: RandomizedChoice, ns: Descant.Components, asm: omch.descant.components}
-      data:
-        Collapsed: 0
+        ObjectTag: Player
+        ScriptName: MailBag
+        MethodName: GiveLetter
+        Parameter: 

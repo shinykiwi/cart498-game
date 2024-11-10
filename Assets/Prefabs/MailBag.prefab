@@ -866,6 +866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: {fileID: 4073332527264828285}
   paragraph: {fileID: 3371383091126307916}
+  descantActor: {fileID: 11400000, guid: 4da36e944c361124181397e78ca17652, type: 2}
 --- !u!1 &8300357580680728632
 GameObject:
   m_ObjectHideFlags: 0

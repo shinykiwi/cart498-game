@@ -1,5 +1,6 @@
 using System.Linq;
 using Cinemachine;
+using Descant.Components;
 using StarterAssets;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
     private StarterAssetsInputs input;
     private bool talking = false;
     private Npc lastTalkedTo = null;
+    
 
     private MailBag mailbag;
     [SerializeField] private GameObject mailbagObject;
@@ -37,7 +39,7 @@ public class Player : MonoBehaviour
         // Bring up the mailbag
         if (Input.GetKeyDown(KeyCode.F))
         {
-            //ebug.Log(mailbag.ToString());
+            //Debug.Log(mailbag.ToString());
             mailbag.Toggle();
         }
     }
@@ -56,6 +58,8 @@ public class Player : MonoBehaviour
             {
                 hud.Show();
             }
+            
+            // Handling doors
             if (hitData.collider.GetComponentInParent<Door>() is { } door)
             {
                 hud.SetActionText(door.ToString());
@@ -69,6 +73,8 @@ public class Player : MonoBehaviour
                     }
                 }
             }
+            
+            // Handling NPCs
             else if (hitData.collider.GetComponentInParent<Npc>() is { } npc)
             {
                 hud.SetActionText(npc.ToString());
@@ -92,8 +98,12 @@ public class Player : MonoBehaviour
                     
                 }
             }
+            // Handling letters
             else if (hitData.collider.GetComponentInParent<Letter>() is { } letter)
             {
+                // Prevents the following if the mailbag is already full
+                if (mailbag.IsFull()) return;
+                
                 hud.SetActionText(letter.ToString());
 
                 // If player presses E

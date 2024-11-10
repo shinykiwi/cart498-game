@@ -19,13 +19,9 @@ MonoBehaviour:
   - {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   Statistics:
     dictionaryList:
-    - Key: Health
-      Value: 20
+    - Key: letterCapacity
+      Value: 0
       index: 0
-      isKeyDuplicated: 0
-    - Key: WantsHelp
-      Value: 1
-      index: 1
       isKeyDuplicated: 0
   Topics:
   - Descant
