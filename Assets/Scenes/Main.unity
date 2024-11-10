@@ -329,7 +329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d096ce5b8eb465409778eb487fcebcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Joe
+  name: Santi Reed
+  descantActor: {fileID: 11400000, guid: 8cd3e26834366fc4e9e9c6ac3be2b63d, type: 2}
 --- !u!4 &81653304
 Transform:
   m_ObjectHideFlags: 0
@@ -5468,7 +5469,7 @@ PrefabInstance:
     - target: {fileID: 1865731274391021505, guid: 2df2db18fb895014ea2b35a705c45dea,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -9.99939
+      value: -9.999512
       objectReference: {fileID: 0}
     - target: {fileID: 2555058989314048065, guid: 2df2db18fb895014ea2b35a705c45dea,
         type: 3}

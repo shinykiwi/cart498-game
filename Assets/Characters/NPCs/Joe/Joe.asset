@@ -18,15 +18,11 @@ MonoBehaviour:
   - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   Statistics:
     dictionaryList:
-    - Key: Money
-      Value: 5
+    - Key: Progression
+      Value: 0
       index: 0
       isKeyDuplicated: 0
   Topics: []
   Relationships:
-    dictionaryList:
-    - Key: Test_Player
-      Value: 0.5
-      index: 0
-      isKeyDuplicated: 0
-  DialogueAttempts: 634
+    dictionaryList: []
+  DialogueAttempts: 647

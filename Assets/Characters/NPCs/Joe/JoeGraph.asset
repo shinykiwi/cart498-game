@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Autosave: 0
   Advanced: 1
-  PannedPosition: {x: -732, y: 352, z: 0}
+  PannedPosition: {x: -701, y: -370, z: 0}
   ScrolledScale: {x: 0.8695652, y: 0.8695652, z: 1}
   Typewriter: 1
   TypewriterSpeed: 2
@@ -27,9 +27,10 @@ MonoBehaviour:
   - Name: ChoiceNode
     Type: Choice
     ID: 1
-    Position: {x: 953.5, y: -108.5}
+    Position: {x: 953.5, y: 0}
     NodeComponents:
     - rid: 5730410717683122197
+    - rid: 5730410734843855129
     Comments: 
     Choices:
     - I'm here to pick up today's mail.
@@ -42,7 +43,7 @@ MonoBehaviour:
     NodeComponents: []
     Comments: 
     Choices:
-    - Sure, thanks.
+    - Will do.
     - Sure, what's your name?
   ResponseNodes:
   - Name: ResponseNode
@@ -55,8 +56,9 @@ MonoBehaviour:
   - Name: ResponseNode
     Type: Response
     ID: 1
-    Position: {x: 1632, y: -331.5}
-    NodeComponents: []
+    Position: {x: 1632, y: -607}
+    NodeComponents:
+    - rid: 5730410734843855130
     Comments: 
     Response: Ah  right, you're the new deliverer I asked for. Thanks for showing
       up.
@@ -120,7 +122,7 @@ MonoBehaviour:
   Groups:
   - Name: Answers
     ID: 0
-    Position: {x: 1607, y: -390}
+    Position: {x: 1607, y: -665.5}
     Nodes:
     - Response
     - Response
@@ -129,7 +131,7 @@ MonoBehaviour:
     Comments: 
   - Name: Start
     ID: 1
-    Position: {x: -67.00001, y: -179.50002}
+    Position: {x: -67, y: -179.5}
     Nodes:
     - Response
     - Start
@@ -207,7 +209,7 @@ MonoBehaviour:
         Actor: {fileID: 11400000, guid: 4da36e944c361124181397e78ca17652, type: 2}
         ChoiceNumber: 2
         VariableType: 0
-        VariableName: letterCapacity
+        VariableName: letterCount
         ComparisonType: 0
         Comparison: 1
     - rid: 5730410734804800397
@@ -218,3 +220,21 @@ MonoBehaviour:
         ScriptName: MailBag
         MethodName: GiveLetter
         Parameter: 
+    - rid: 5730410734843855129
+      type: {class: LockedChoice, ns: Descant.Components, asm: omch.descant.components}
+      data:
+        Collapsed: 0
+        Actor: {fileID: 11400000, guid: 8cd3e26834366fc4e9e9c6ac3be2b63d, type: 2}
+        ChoiceNumber: 1
+        VariableType: 0
+        VariableName: Progression
+        ComparisonType: 4
+        Comparison: 0
+    - rid: 5730410734843855130
+      type: {class: StatisticChange, ns: Descant.Components, asm: omch.descant.components}
+      data:
+        Collapsed: 0
+        Actor: {fileID: 11400000, guid: 8cd3e26834366fc4e9e9c6ac3be2b63d, type: 2}
+        StatisticName: Progression
+        OperationType: 0
+        OperationValue: 1

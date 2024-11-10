@@ -9,7 +9,15 @@ public class ButtonClick : MonoBehaviour
     [SerializeField] private DescantDialogueUI ui;
     private void Start()
     {
-        ui.OnDisplay += Clicked;
+        if (ui)
+        {
+            ui.OnDisplay += Clicked;
+        }
+        else
+        {
+            Debug.Log("Error: Cannot do [ui.OnDisplay -= Clicked] because it does not exist.");
+        }
+       
     }
 
     public void Clicked()
@@ -24,6 +32,14 @@ public class ButtonClick : MonoBehaviour
 
     private void OnDisable()
     {
-        ui.OnDisplay -= Clicked;
+        if (ui)
+        {
+            ui.OnDisplay -= Clicked;
+        }
+        else
+        {
+            Debug.Log("Error: Cannot do [ui.OnDisplay -= Clicked] because it does not exist.");
+        }
+        
     }
 }

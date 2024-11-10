@@ -134,7 +134,9 @@ public class MailBag : MonoBehaviour
 
     private void UpdateDescantActor()
     {
-        descantActor.Statistics["letterCapacity"] = letterCapacity;
+        descantActor.Statistics["letterCount"] += 1.0f;
+        Debug.Log(descantActor);
+        
     }
 
     /// <summary>

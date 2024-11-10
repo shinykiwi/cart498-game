@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Descant.Components;
 using Descant.Runtime;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ public class Npc : MonoBehaviour
     private DescantDialogueUI dialogueUI;
 
     [SerializeField] private string name = "Joe";
+
+    [SerializeField] private DescantActor descantActor;
     
     public event Action OnEnd;
     private void Awake()
@@ -29,6 +32,7 @@ public class Npc : MonoBehaviour
     private void ConvoEnded()
     {
         Debug.Log("convo ended!");
+        Debug.Log("descantActor.Statistics[\"Progression\"]) = "+ descantActor.Statistics["Progression"]);
         OnEnd?.Invoke();
     }
 

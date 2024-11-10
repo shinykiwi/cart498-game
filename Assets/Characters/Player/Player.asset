@@ -19,16 +19,11 @@ MonoBehaviour:
   - {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   Statistics:
     dictionaryList:
-    - Key: letterCapacity
+    - Key: letterCount
       Value: 0
       index: 0
       isKeyDuplicated: 0
-  Topics:
-  - Descant
+  Topics: []
   Relationships:
-    dictionaryList:
-    - Key: Test_NPC
-      Value: 0.5
-      index: 0
-      isKeyDuplicated: 0
+    dictionaryList: []
   DialogueAttempts: 0
