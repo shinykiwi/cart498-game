@@ -143,19 +143,25 @@ public class MailBag : MonoBehaviour
         if (activeSlot == null)
         {
             activeSlot = slot;
-            slot.ToggleSelect();
         }
         else
         {
             activeSlot.ToggleSelect();
             activeSlot = slot;
-            activeSlot.ToggleSelect();
+            
         }
+        activeSlot.ToggleSelect();
+        DisplayLetterInfo(activeSlot.GetID() - 1);
     }
 
     public void GiveLetter()
     {
         Debug.Log("giving the letter!");
+    }
+
+    private int FindLetter(Slot slot)
+    {
+        return slot.GetID();
     }
 
     private void DisplayLetterInfo(int index)
