@@ -335,7 +335,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Letter from Isobel
+  m_text: No letters.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1f9e8d3970cb1df4c85947b9b9609f13, type: 2}
   m_sharedMaterial: {fileID: -3974479520334577658, guid: 1f9e8d3970cb1df4c85947b9b9609f13,
@@ -345,8 +345,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278387579
-  m_fontColor: {r: 0.4811321, g: 0.011347453, b: 0.011347453, a: 1}
+    rgba: 4281808703
+  m_fontColor: {r: 0.24528301, g: 0.21404414, b: 0.21404414, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -723,15 +723,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
-
-
-'
+  m_text: I should probably go pick up the letters I need to deliver.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1f9e8d3970cb1df4c85947b9b9609f13, type: 2}
   m_sharedMaterial: {fileID: -3974479520334577658, guid: 1f9e8d3970cb1df4c85947b9b9609f13,
@@ -842,7 +834,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7848461230080075363}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
@@ -2242,6 +2234,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3994474672546859554}
     m_Modifications:
+    - target: {fileID: 1221904931579046193, guid: 2b9d84636d0f4494b902efe97f307d77,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2641168865323226773, guid: 2b9d84636d0f4494b902efe97f307d77,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2341,6 +2338,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338579308717153722, guid: 2b9d84636d0f4494b902efe97f307d77,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338579308717153722, guid: 2b9d84636d0f4494b902efe97f307d77,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338579308717153722, guid: 2b9d84636d0f4494b902efe97f307d77,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7848461230080075363}
+    - target: {fileID: 4338579308717153722, guid: 2b9d84636d0f4494b902efe97f307d77,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5045528721831580234, guid: 2b9d84636d0f4494b902efe97f307d77,
         type: 3}

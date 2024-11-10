@@ -1,6 +1,7 @@
 using Descant.Components;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
@@ -52,7 +53,7 @@ public class MailBag : MonoBehaviour
     /// <summary>
     /// The currently selected slot that is displaying the contents of the letter.
     /// </summary>
-    private Slot activeSlot;
+    private Slot activeSlot = null;
     #endregion
 
     #region Getters & Setters
@@ -75,6 +76,8 @@ public class MailBag : MonoBehaviour
         
         letterCapacity = slots.Length;
         letters = new Letter[letterCapacity];
+        
+        InitButtons();
         
         // Hiding the UI to begin with
         Hide();
@@ -126,6 +129,28 @@ public class MailBag : MonoBehaviour
         }
 
         return false; // if the letter could not be found
+    }
+
+    private void InitButtons()
+    {
+        foreach (Slot slot in slots)
+        {
+            slot.GetComponent<Button>().onClick.AddListener(() => OnSlotClick(slot));
+        }
+    }
+    private void OnSlotClick(Slot slot)
+    {
+        if (activeSlot == null)
+        {
+            activeSlot = slot;
+            slot.ToggleSelect();
+        }
+        else
+        {
+            activeSlot.ToggleSelect();
+            activeSlot = slot;
+            activeSlot.ToggleSelect();
+        }
     }
 
     public void GiveLetter()

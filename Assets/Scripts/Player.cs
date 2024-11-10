@@ -17,8 +17,6 @@ public class Player : MonoBehaviour
     private StarterAssetsInputs input;
     private bool talking = false;
     private Npc lastTalkedTo = null;
-    
-
     private MailBag mailbag;
     [SerializeField] private GameObject mailbagObject;
     
@@ -26,10 +24,11 @@ public class Player : MonoBehaviour
     {
         input = GetComponent<StarterAssetsInputs>();
         movement = GetComponent<ThirdPersonController>();
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
         mailbagObject = Instantiate(mailbagObject);
         mailbag = mailbagObject.GetComponent<MailBag>();
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     
     void Update()
@@ -41,7 +40,14 @@ public class Player : MonoBehaviour
         {
             //Debug.Log(mailbag.ToString());
             mailbag.Toggle();
+            ToggleCursor();
         }
+    }
+
+    void ToggleCursor()
+    {
+        Cursor.visible = !Cursor.visible;
+        Cursor.lockState = Cursor.visible ? CursorLockMode.Confined : CursorLockMode.Locked;
     }
     
     void FireRay()
@@ -129,8 +135,7 @@ public class Player : MonoBehaviour
         talking = !talking;
         hud.Toggle();
         npcLookAtCamera.enabled = !npcLookAtCamera.enabled;
-        Cursor.visible = !Cursor.visible;
-        Cursor.lockState = Cursor.visible ? CursorLockMode.Confined : CursorLockMode.Locked;
+        ToggleCursor();
     }
 
     void DoneTalking()
