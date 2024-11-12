@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce95f313843e48d1a4b8cf6050141954, type: 3}
-  m_Name: JoeGraph
+  m_Name: TestNPCGraph
   m_EditorClassIdentifier: 
   Autosave: 0
   Advanced: 1
-  PannedPosition: {x: -413.5, y: 165, z: 0}
-  ScrolledScale: {x: 0.65751624, y: 0.65751624, z: 1}
+  PannedPosition: {x: -790, y: -549, z: 0}
+  ScrolledScale: {x: 1, y: 1, z: 1}
   Typewriter: 1
   TypewriterSpeed: 2
   ChoiceNodeID: 9
@@ -29,8 +29,8 @@ MonoBehaviour:
     ID: 1
     Position: {x: 953.5, y: 0}
     NodeComponents:
+    - rid: 5730410717683122197
     - rid: 5730410734843855129
-    - rid: 5730410774056403662
     Comments: 
     Choices:
     - I'm here to pick up today's mail.
@@ -58,9 +58,9 @@ MonoBehaviour:
     ID: 1
     Position: {x: 1632, y: -607}
     NodeComponents:
-    - rid: 5730410774056403433
+    - rid: 5730410774056403040
     Comments: 
-    Response: Ah right, you're the new deliverer I asked for. Thanks for showing
+    Response: Ah  right, you're the new deliverer I asked for. Thanks for showing
       up.
   - Name: ResponseNode
     Type: Response
@@ -122,7 +122,7 @@ MonoBehaviour:
   Groups:
   - Name: Answers
     ID: 0
-    Position: {x: 1607.0001, y: -665.5}
+    Position: {x: 1607, y: -665.5}
     Nodes:
     - Response
     - Response
@@ -131,7 +131,7 @@ MonoBehaviour:
     Comments: 
   - Name: Start
     ID: 1
-    Position: {x: -67, y: -179.50002}
+    Position: {x: -67, y: -179.5}
     Nodes:
     - Response
     - Start
@@ -202,6 +202,16 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 5730410717683122197
+      type: {class: LockedChoice, ns: Descant.Components, asm: omch.descant.components}
+      data:
+        Collapsed: 0
+        Actor: {fileID: 11400000, guid: 4da36e944c361124181397e78ca17652, type: 2}
+        ChoiceNumber: 2
+        VariableType: 4
+        VariableName: letterCount
+        ComparisonType: 0
+        Comparison: 1
     - rid: 5730410734804800397
       type: {class: Event, ns: Descant.Components, asm: omch.descant.components}
       data:
@@ -218,9 +228,9 @@ MonoBehaviour:
         ChoiceNumber: 1
         VariableType: 4
         VariableName: progression
-        ComparisonType: 4
+        ComparisonType: 2
         Comparison: 0
-    - rid: 5730410774056403433
+    - rid: 5730410774056403040
       type: {class: StatChange, ns: Descant.Components, asm: omch.descant.components}
       data:
         Collapsed: 0
@@ -228,13 +238,3 @@ MonoBehaviour:
         StatisticName: progression
         OperationType: 0
         OperationValue: 1
-    - rid: 5730410774056403662
-      type: {class: LockedChoice, ns: Descant.Components, asm: omch.descant.components}
-      data:
-        Collapsed: 0
-        Actor: {fileID: 11400000, guid: 4da36e944c361124181397e78ca17652, type: 2}
-        ChoiceNumber: 2
-        VariableType: 4
-        VariableName: letterCount
-        ComparisonType: 0
-        Comparison: 1

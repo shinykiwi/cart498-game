@@ -1,4 +1,4 @@
-﻿// Modified from StatisticChange to work for my component Stat
+﻿// Please see https://omch.tech/descant/#statisticchange for documentation
 
 using System;
 using Descant.Utilities;
@@ -6,12 +6,11 @@ using Descant.Utilities;
 namespace Descant.Components
 {
     [Serializable, MaxQuantity(Single.PositiveInfinity), NodeType(DescantNodeType.Any)]
-    public class StatisticChange : DescantComponent
+    public class StatChange : DescantComponent
     {
         [Inline] public DescantActor Actor;
         
         [ParameterGroup("Statistic to change")] public string StatisticName;
-        
         [ParameterGroup("Operation to perform")] public OperationType OperationType;
         [ParameterGroup("Operation to perform")] public float OperationValue;
 
@@ -20,15 +19,15 @@ namespace Descant.Components
             switch (OperationType)
             {
                 case OperationType.IncreaseBy:
-                    Actor.Statistics[StatisticName] += OperationValue;
+                    Actor.Stat.IncreaseBy(StatisticName, OperationValue);
                     break;
                 
                 case OperationType.DecreaseBy:
-                    Actor.Statistics[StatisticName] -= OperationValue;
+                    Actor.Stat.DecreaseBy(StatisticName, OperationValue);
                     break;
                 
                 case OperationType.Set:
-                    Actor.Statistics[StatisticName] = OperationValue;
+                    Actor.Stat.SetEntry(StatisticName, OperationValue);
                     break;
             }
             

@@ -19,6 +19,7 @@ public class Npc : MonoBehaviour
     {
         dialogueTrigger = GetComponent<DescantDialogueTrigger>();
         dialogueUI = dialogueTrigger.GetComponentInChildren<DescantDialogueUI>();
+        descantActor.Stat.AddEntry("progression", 0);
     }
 
     public void TalkTo()
@@ -32,7 +33,7 @@ public class Npc : MonoBehaviour
     private void ConvoEnded()
     {
         Debug.Log("convo ended!");
-        Debug.Log("descantActor.Statistics[\"Progression\"]) = "+ descantActor.Statistics["Progression"]);
+        Debug.Log(descantActor.Stat.ToString());
         OnEnd?.Invoke();
     }
 

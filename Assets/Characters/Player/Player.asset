@@ -23,6 +23,8 @@ MonoBehaviour:
       Value: 0
       index: 0
       isKeyDuplicated: 0
+  Stat:
+    json: "{\n  \"letterCount\": 0.0\n}"
   Topics: []
   Relationships:
     dictionaryList: []

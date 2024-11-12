@@ -29,6 +29,8 @@ namespace Descant.Components
         /// The actor's statistics
         /// </summary>
         public SerializableDictionary<string, float> Statistics;
+
+        public Stats Stat;
         
         /// <summary>
         /// The actor's topics list

@@ -6,7 +6,7 @@ namespace Descant.Components
     /// Enum of DescantActors' variable types
     /// (used by DescantComponents when querying such variables)
     /// </summary>
-    public enum VariableType { Statistic, Topic, Relationship, DialogueAttempts }
+    public enum VariableType { Statistic, Topic, Relationship, DialogueAttempts, Stat }
     
     /// <summary>
     /// Enum of different ways to compare DescantActors' variables

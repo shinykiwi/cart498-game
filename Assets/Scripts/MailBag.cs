@@ -77,6 +77,8 @@ public class MailBag : MonoBehaviour
         letterCapacity = slots.Length;
         letters = new Letter[letterCapacity];
         
+        descantActor.Stat.AddEntry("letterCount", letterCount);
+        
         InitButtons();
         
         // Hiding the UI to begin with
@@ -97,9 +99,10 @@ public class MailBag : MonoBehaviour
             letter.gameObject.GetComponent<Collider>().enabled = false;
             slots[letterCount].Fill(letter.GetSprite()); // show image in slot
             DisplayLetterInfo(letterCount);
-            letterCount++; // increase counter
             
-            UpdateDescantActor();
+            // Increase letter count locally and in DescantActor
+            letterCount++; // increase counter
+            descantActor.Stat.IncreaseBy("letterCount", 1);
         }
         else
         {
@@ -166,13 +169,20 @@ public class MailBag : MonoBehaviour
 
     private void DisplayLetterInfo(int index)
     {
-        title.text = letters[index].ToString();
-        paragraph.text = letters[index].GetContents();
+        if (letters[index])
+        {
+            title.text = letters[index].ToString();
+            paragraph.text = letters[index].GetContents();
+        }
+        
     }
 
-    private void UpdateDescantActor()
+    private void UpdateDescantActor(OperationType type, string variable)
     {
-        descantActor.Statistics["letterCount"] += 1.0f;
+        // TODO MAKE IT AN OPERATION TYPE
+
+        
+        
         Debug.Log(descantActor);
         
     }
