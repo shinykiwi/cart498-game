@@ -58,7 +58,6 @@ public class Slot : MonoBehaviour
     public void Clear()
     {
         occupied = false;
-        image.sprite = null;
-        image.color = beige;
+        image.enabled = false;
     }
 }

@@ -13,6 +13,9 @@ public class MailBag : MonoBehaviour
     
     [Tooltip("The text used for displaying the body of the letter.")]
     [SerializeField] private TextMeshProUGUI paragraph;
+
+    [Tooltip("The button to press that will give the item over.")]
+    [SerializeField] private GameObject giveButton;
     
     [Tooltip("The descant actor of the player, to change letterCapacity value.")]
     [SerializeField] private DescantActor descantActor;
@@ -76,8 +79,11 @@ public class MailBag : MonoBehaviour
         
         letterCapacity = slots.Length;
         letters = new Letter[letterCapacity];
-        
-        descantActor.Stat.AddEntry("letterCount", letterCount);
+
+        if (!descantActor.Stat.Contains("letterCount"))
+        {
+            descantActor.Stat.AddEntry("letterCount", letterCount);
+        }
         
         InitButtons();
         
@@ -115,23 +121,18 @@ public class MailBag : MonoBehaviour
     /// </summary>
     /// <param name="letter"></param>
     /// <returns>bool</returns>
-    public bool RemoveLetter(Letter letter)
+    public void RemoveLetter()
     {
-        int letterID = letter.GetID();
+        int letterIndex = FindLetterIdx(activeSlot);
+        Debug.Log("Letter index is " + letterIndex);
+        letters[letterIndex] = null;
         
-        // Iterate through all of the letters in the inventory
-        for (int i = 0; i < letterCount; i++)
-        {
-            // If an ID matches
-            if (letterID == letters[i].GetID())
-            {
-                letters[i] = null; // deletes the letter in that slot
-                slots[i].Clear(); // removes the letter visually
-                return true;
-            }
-        }
-
-        return false; // if the letter could not be found
+        activeSlot.Clear();
+        DisplayLetterInfo();
+            
+        // Decrease letter count locally and in DescantActor
+        letterCount--;
+        descantActor.Stat.DecreaseBy("letterCount", 1);
     }
 
     private void InitButtons()
@@ -154,37 +155,75 @@ public class MailBag : MonoBehaviour
             
         }
         activeSlot.ToggleSelect();
-        DisplayLetterInfo(activeSlot.GetID() - 1);
-    }
-
-    public void GiveLetter()
-    {
-        Debug.Log("giving the letter!");
-    }
-
-    private int FindLetter(Slot slot)
-    {
-        return slot.GetID();
-    }
-
-    private void DisplayLetterInfo(int index)
-    {
-        if (letters[index])
+        if (activeSlot.IsFull())
         {
-            title.text = letters[index].ToString();
-            paragraph.text = letters[index].GetContents();
+            DisplayLetterInfo(activeSlot.GetID() - 1);
+        }
+        else
+        {
+            DisplayLetterInfo();
         }
         
+        
     }
 
-    private void UpdateDescantActor(OperationType type, string variable)
+    // Called in DescantGraphs of NPCs to give them a letter
+    public void GiveLetter()
     {
-        // TODO MAKE IT AN OPERATION TYPE
+        Show();
 
+        giveButton.SetActive(true);
+        
+        ToggleCursor();
+
+    }
+
+    public void OnGiveButtonClick()
+    {
+        Hide();
+        
+        giveButton.SetActive(false);
+        
+        ToggleCursor();
+
+        RemoveLetter();
+    }
+
+    
+    private int FindLetterIdx(Slot slot)
+    {
+        return slot.GetID() - 1;
+    }
+
+    private Letter FindLetter(Slot slot)
+    {
+        return letters[FindLetterIdx(slot)];
+    }
+
+    private void DisplayLetterInfo(int index = -1)
+    {
+        if (index == -1)
+        {
+            title.text = "Select a letter.";
+            paragraph.text = "Choose any letter from your bag to read it";
+
+        }
+        else
+        {
+            if (letters[index])
+            {
+                title.text = letters[index].ToString();
+                paragraph.text = letters[index].GetContents();
+            }
+        }
         
         
-        Debug.Log(descantActor);
-        
+    }
+    
+    void ToggleCursor()
+    {
+        Cursor.visible = !Cursor.visible;
+        Cursor.lockState = Cursor.visible ? CursorLockMode.Confined : CursorLockMode.Locked;
     }
 
     /// <summary>
