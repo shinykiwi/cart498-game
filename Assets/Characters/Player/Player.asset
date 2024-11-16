@@ -24,7 +24,7 @@ MonoBehaviour:
       index: 0
       isKeyDuplicated: 0
   Stat:
-    json: "{\n  \"letterCount\": 2.0\n}"
+    json: "{\n  \"letterCount\": 1.0\n}"
   Topics: []
   Relationships:
     dictionaryList: []
