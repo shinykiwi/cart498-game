@@ -9,17 +9,17 @@ using UnityEngine.UI;
 
 public class Door : MonoBehaviour
 {
-    [Tooltip("The scene that will be loaded into.")]
-    [SerializeField] private SceneAsset destination;
+    [Tooltip("The scene that will be loaded into. Leave null if there's no destination to go to.")] 
+    [SerializeField]
+    private SceneAsset destination = null;
+
+    [SerializeField] private string destinationName = "DefaultDestination";
     
     [Tooltip("Sound effect that plays when going inside a building or room.")]
     [SerializeField] private AudioSource openDoor;
     
     [Tooltip("Sound effect that plays when leaving a building.")]
     [SerializeField] private AudioSource closeDoor;
-    
-    [Tooltip("Canvas object that facilitates fading to black.")]
-    [SerializeField] private GameObject fadeCanvas;
     
     /// <summary>
     /// The fade image, used for controlling the colour and opacity.
@@ -35,23 +35,39 @@ public class Door : MonoBehaviour
     /// Whether the animation is currently fading. 
     /// </summary>
     private bool isFading = false;
+
+    private Transform playerTransform;
+
+    [SerializeField] private Transform playerSpawn;
+
+    private bool entered = true;
     
     /// <summary>
     /// Called to initiate opening the door process.
     /// </summary>
-    public void Open()
+    public void Open(Transform t, GameObject fadeCanvas)
     {
+        playerTransform = t;
         // Creates new canvas
-        fadeCanvas = Instantiate(fadeCanvas, transform);
         image = fadeCanvas.GetComponentInChildren<Image>();
         
         // If not already fading and the canvas exists
         if (!isFading && image)
         {
-            // Fade
-            isFading = true;
-            image.DOFade(1.0f, length).OnComplete(FadeComplete);
+            FadeIn();
         }
+    }
+
+    void FadeIn()
+    {
+        isFading = true;
+        image.DOFade(1.0f, length).OnComplete(FadeComplete);
+    }
+
+    void FadeOut()
+    {
+        isFading = true;
+        image.DOFade(0.0f, length).OnComplete((() => { isFading = false;}));
     }
 
     /// <summary>
@@ -60,7 +76,7 @@ public class Door : MonoBehaviour
     private void FadeComplete()
     {
         isFading = false;
-
+        
         StartCoroutine(PlaySoundEffects());
     }
 
@@ -81,8 +97,8 @@ public class Door : MonoBehaviour
     /// <returns>IEnumerator</returns>
     private IEnumerator PlaySoundEffects()
     {
-        // If we are going outside
-        if (destination.name == "Overworld")
+        // If we are exiting
+        if (!entered)
         {
             // Play the sound effect if not already playing
             if (!closeDoor.isPlaying)
@@ -111,7 +127,8 @@ public class Door : MonoBehaviour
             }
                 
         }
-        LoadScene();
+        
+        TransportPlayer();
     }
 
     /// <summary>
@@ -122,6 +139,24 @@ public class Door : MonoBehaviour
         SceneManager.LoadScene(destination.name, LoadSceneMode.Single);
         
     }
+
+    private void TransportPlayer()
+    {
+        if (destination)
+        {
+          LoadScene();  
+        }
+
+        if (entered)
+        {
+            //playerSpawn.x *= -1;
+        }
+
+        playerTransform.position = playerSpawn.position;
+        entered = !entered;
+        
+        FadeOut();
+    }
     
     /// <summary>
     /// Returns the destination name, identifying where the door leads to.
@@ -129,7 +164,11 @@ public class Door : MonoBehaviour
     /// <returns>string</returns>
     public override string ToString()
     {
-        return destination.name;
+        if (entered)
+        {
+            return "Exit";
+        }
+        return destinationName;
     }
     
 }

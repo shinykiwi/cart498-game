@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     private Npc lastTalkedTo = null;
     private MailBag mailbag;
     [SerializeField] private GameObject mailbagObject;
+
+    [SerializeField] private UIManager uiManager;
     
     void Start()
     {
@@ -75,7 +77,7 @@ public class Player : MonoBehaviour
                     // If the door is not already being used
                     if (!door.InUse())
                     {
-                        door.Open(); 
+                        door.Open(transform, uiManager.fadeCanvas); 
                     }
                 }
             }
