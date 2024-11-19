@@ -146,13 +146,10 @@ public class Door : MonoBehaviour
         {
           LoadScene();  
         }
-
-        if (entered)
-        {
-            //playerSpawn.x *= -1;
-        }
-
-        playerTransform.position = playerSpawn.position;
+        
+        Debug.Log("transporting player!");
+        playerTransform.position += new Vector3(50, 50, 50);
+       
         entered = !entered;
         
         FadeOut();

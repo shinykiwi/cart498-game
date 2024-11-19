@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8091997411918757342
 Transform:
@@ -99,6 +99,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f9c9901d8c18bbc47a4b2c68a98fdf1f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -174,10 +179,7 @@ MonoBehaviour:
   destinationName: DefaultDestination
   openDoor: {fileID: 5384829540959861682}
   closeDoor: {fileID: 5202377220007916086}
-  fadeCanvas: {fileID: 5541647841247819792, guid: 069bdada47611b544ae3caae0a4b6797,
-    type: 3}
   playerSpawn: {fileID: 8091997411918757342}
-  entered: 0
 --- !u!82 &5384829540959861682
 AudioSource:
   m_ObjectHideFlags: 0
