@@ -148,7 +148,7 @@ public class Door : MonoBehaviour
         }
         
         Debug.Log("transporting player!");
-        playerTransform.position += new Vector3(50, 50, 50);
+        playerTransform.Translate(0,0,20);
        
         entered = !entered;
         

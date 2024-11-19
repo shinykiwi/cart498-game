@@ -40,7 +40,6 @@ public class Player : MonoBehaviour
         // Bring up the mailbag
         if (Input.GetKeyDown(KeyCode.F))
         {
-            //Debug.Log(mailbag.ToString());
             mailbag.Toggle();
             ToggleCursor();
         }
