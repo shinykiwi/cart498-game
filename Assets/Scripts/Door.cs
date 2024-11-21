@@ -131,10 +131,10 @@ public class Door : MonoBehaviour
 
     private void TransportPlayer()
     {
-        // if (destination)
-        // {
-        //   LoadScene();  
-        // }
+        if (destination)
+        {
+          LoadScene();  
+        }
         
         Vector3 doorPos = transform.position;
         Vector3 newPos = new Vector3(doorPos.x + 2, 0, doorPos.z + 2);

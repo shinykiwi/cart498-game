@@ -96,7 +96,6 @@ public class Player : MonoBehaviour
                         
                         ToggleTalking();
                         npc.TalkTo(); // calls descant dialogue trigger to display
-                        Debug.Log(talking);
                     }
                     
                 }

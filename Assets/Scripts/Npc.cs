@@ -27,6 +27,8 @@ public class Npc : MonoBehaviour
         if (dialogueTrigger)
         {
             dialogueTrigger.Display();
+            dialogueUI.GetComponent<Canvas>().enabled = false;
+            dialogueUI.GetComponent<Canvas>().enabled = true;
         }
     }
 
