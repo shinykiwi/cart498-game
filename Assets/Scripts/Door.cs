@@ -38,7 +38,7 @@ public class Door : MonoBehaviour
 
     private Transform playerTransform;
 
-    private bool entered = true;
+    private bool entered = false;
     
     /// <summary>
     /// Called to initiate opening the door process.
@@ -139,8 +139,6 @@ public class Door : MonoBehaviour
         Vector3 doorPos = transform.position;
         Vector3 newPos = new Vector3(doorPos.x + 2, 0, doorPos.z + 2);
         CharacterController controller = playerTransform.gameObject.GetComponent<CharacterController>();
-        
-        Debug.Log(controller);
 
         controller.enabled = false;
         
@@ -156,8 +154,6 @@ public class Door : MonoBehaviour
             
             playerTransform.position = newPos;
         }
-        
-        Debug.Log("Transporting player to " + newPos);
        
         entered = !entered;
 
