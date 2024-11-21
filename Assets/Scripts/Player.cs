@@ -73,11 +73,7 @@ public class Player : MonoBehaviour
                 // If E is pressed then do something
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    // If the door is not already being used
-                    if (!door.InUse())
-                    {
-                        door.Open(transform, uiManager.fadeCanvas); 
-                    }
+                    door.Open(transform, uiManager.fadeCanvas); 
                 }
             }
             
