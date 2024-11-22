@@ -3447,6 +3447,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1865731274391021505, guid: 2df2db18fb895014ea2b35a705c45dea,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -9.999756
+      objectReference: {fileID: 0}
     - target: {fileID: 3665766721774193996, guid: 2df2db18fb895014ea2b35a705c45dea,
         type: 3}
       propertyPath: m_Pivot.x
@@ -12600,10 +12605,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1103185038835538073, guid: cc024a0c09b7e744b8770a86825b39ea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.37
+      objectReference: {fileID: 0}
     - target: {fileID: 2574650896935503031, guid: cc024a0c09b7e744b8770a86825b39ea,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848246915734464321, guid: cc024a0c09b7e744b8770a86825b39ea,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848246915734464321, guid: cc024a0c09b7e744b8770a86825b39ea,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848246915734464321, guid: cc024a0c09b7e744b8770a86825b39ea,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848246915734464321, guid: cc024a0c09b7e744b8770a86825b39ea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848246915734464321, guid: cc024a0c09b7e744b8770a86825b39ea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848246915734464321, guid: cc024a0c09b7e744b8770a86825b39ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848246915734464321, guid: cc024a0c09b7e744b8770a86825b39ea,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3714011673725879743, guid: cc024a0c09b7e744b8770a86825b39ea,
         type: 3}
@@ -12647,6 +12692,11 @@ PrefabInstance:
       propertyPath: npcLookAtCamera
       value: 
       objectReference: {fileID: 1365939355}
+    - target: {fileID: 4849766504956753095, guid: cc024a0c09b7e744b8770a86825b39ea,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4949004992904276717, guid: cc024a0c09b7e744b8770a86825b39ea,
         type: 3}
       propertyPath: m_Name
@@ -12708,7 +12758,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1472584920188148619, guid: cc024a0c09b7e744b8770a86825b39ea, type: 3}
+    - {fileID: 8147415311759972701, guid: cc024a0c09b7e744b8770a86825b39ea, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc024a0c09b7e744b8770a86825b39ea, type: 3}
@@ -12879,7 +12931,7 @@ PrefabInstance:
     - target: {fileID: 1229051378985605448, guid: bc0289b9c954e479c8ed0471ed06135a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3
+      value: 2.292
       objectReference: {fileID: 0}
     - target: {fileID: 1229051378985605448, guid: bc0289b9c954e479c8ed0471ed06135a,
         type: 3}
@@ -12940,7 +12992,7 @@ Transform:
   m_GameObject: {fileID: 3622711822250936297}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 27.200003, y: 2.3, z: 10.229944}
+  m_LocalPosition: {x: 27.200003, y: 2.292, z: 10.229944}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
