@@ -41,7 +41,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8904362327499966133}
-  - component: {fileID: 4410971037314636096}
   - component: {fileID: 3450363622915586056}
   - component: {fileID: 2574650896935503031}
   - component: {fileID: 4223481482672647467}
@@ -72,27 +71,6 @@ Transform:
   - {fileID: 6184245127127815582}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &4410971037314636096
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4949004992904276717}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
-  m_Controller: {fileID: 9100000, guid: 40db3173a05ae3242b1c182a09b0a183, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!143 &3450363622915586056
 CharacterController:
   m_ObjectHideFlags: 0
@@ -148,16 +126,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 274649b0e221539409070ebf6c18918b, type: 3}
   - {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
   FootstepAudioVolume: 0.3
-  JumpHeight: 1.2
-  Gravity: -15
-  JumpTimeout: 0.3
-  FallTimeout: 0.15
-  Grounded: 1
-  GroundedOffset: -0.14
-  GroundedRadius: 0.28
-  GroundLayers:
-    serializedVersion: 2
-    m_Bits: 1
   CinemachineCameraTarget: {fileID: 7732121743790118150}
   TopClamp: 70
   BottomClamp: -30
@@ -339,7 +307,7 @@ Transform:
   m_GameObject: {fileID: 7732121743790118150}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.375, z: 0}
+  m_LocalPosition: {x: 0, y: 1.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -353,6 +321,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6184245127127815582}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 8f2a8c4921fb7a34ea13fc95ed2b32a4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8f2a8c4921fb7a34ea13fc95ed2b32a4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8f2a8c4921fb7a34ea13fc95ed2b32a4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f2a8c4921fb7a34ea13fc95ed2b32a4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -403,11 +386,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8f2a8c4921fb7a34ea13fc95ed2b32a4,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5675447431551703001, guid: 8f2a8c4921fb7a34ea13fc95ed2b32a4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50f29767ea68b96408211ea78074b302, type: 2}
+    - target: {fileID: -3862895470674433509, guid: 8f2a8c4921fb7a34ea13fc95ed2b32a4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50f29767ea68b96408211ea78074b302, type: 2}
     - target: {fileID: 919132149155446097, guid: 8f2a8c4921fb7a34ea13fc95ed2b32a4,
         type: 3}
       propertyPath: m_Name
       value: MC-T-Pose
       objectReference: {fileID: 0}
+    - target: {fileID: 2315526500812076688, guid: 8f2a8c4921fb7a34ea13fc95ed2b32a4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50f29767ea68b96408211ea78074b302, type: 2}
+    - target: {fileID: 4436401996298182719, guid: 8f2a8c4921fb7a34ea13fc95ed2b32a4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50f29767ea68b96408211ea78074b302, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 8f2a8c4921fb7a34ea13fc95ed2b32a4,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a03d2b0d136167f4cb093b597055a7cc, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
