@@ -38,9 +38,7 @@ public class Door : MonoBehaviour
 
     private Transform playerTransform;
 
-    [SerializeField] private Transform playerSpawn;
-
-    private bool entered = true;
+    private bool entered = false;
     
     /// <summary>
     /// Called to initiate opening the door process.
@@ -78,15 +76,6 @@ public class Door : MonoBehaviour
         isFading = false;
         
         StartCoroutine(PlaySoundEffects());
-    }
-
-    /// <summary>
-    /// Whether the door is currently being used, must have had an Open() already called for this to be true.
-    /// </summary>
-    /// <returns>bool</returns>
-    public bool InUse()
-    {
-        return image;
     }
 
     /// <summary>
@@ -146,14 +135,29 @@ public class Door : MonoBehaviour
         {
           LoadScene();  
         }
+        
+        Vector3 doorPos = transform.position;
+        Vector3 newPos = new Vector3(doorPos.x + 2, 0, doorPos.z + 2);
+        CharacterController controller = playerTransform.gameObject.GetComponent<CharacterController>();
 
+        controller.enabled = false;
+        
+        // Must be exiting
         if (entered)
         {
-            //playerSpawn.x *= -1;
+            playerTransform.position = newPos;
         }
-
-        playerTransform.position = playerSpawn.position;
+        // Must be entering
+        else
+        {
+            newPos.z = doorPos.z - 2;
+            
+            playerTransform.position = newPos;
+        }
+       
         entered = !entered;
+
+        controller.enabled = true;
         
         FadeOut();
     }

@@ -40,7 +40,6 @@ public class Player : MonoBehaviour
         // Bring up the mailbag
         if (Input.GetKeyDown(KeyCode.F))
         {
-            //Debug.Log(mailbag.ToString());
             mailbag.Toggle();
             ToggleCursor();
         }
@@ -74,11 +73,7 @@ public class Player : MonoBehaviour
                 // If E is pressed then do something
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    // If the door is not already being used
-                    if (!door.InUse())
-                    {
-                        door.Open(transform, uiManager.fadeCanvas); 
-                    }
+                    door.Open(transform, uiManager.fadeCanvas); 
                 }
             }
             
@@ -101,7 +96,6 @@ public class Player : MonoBehaviour
                         
                         ToggleTalking();
                         npc.TalkTo(); // calls descant dialogue trigger to display
-                        Debug.Log(talking);
                     }
                     
                 }
