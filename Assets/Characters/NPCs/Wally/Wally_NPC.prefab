@@ -48,8 +48,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Wally
+  age: 0
+  occupation: 
   newName: Wally
   roomNumber: 0
+  location: 0
+  status: 0
+  image: {fileID: 0}
   descantActor: {fileID: 11400000, guid: cc9e5990e53ed194e8621da724daf170, type: 2}
 --- !u!114 &1015120735051126170
 MonoBehaviour:
@@ -536,6 +541,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 07127d05ad8d7bc4c9bed7d7ba010f6d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ec18441c8548c2d40813ab1ecf9a485f, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 07127d05ad8d7bc4c9bed7d7ba010f6d,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6580221854049599262, guid: 07127d05ad8d7bc4c9bed7d7ba010f6d,
         type: 3}

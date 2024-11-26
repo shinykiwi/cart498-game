@@ -479,7 +479,7 @@ PrefabInstance:
     - target: {fileID: 7652543586426948603, guid: 3e7f1d2b6f2dd2b448a2e6f2545f2386,
         type: 3}
       propertyPath: occupation
-      value: 
+      value: Nurse
       objectReference: {fileID: 0}
     - target: {fileID: 7652543586426948603, guid: 3e7f1d2b6f2dd2b448a2e6f2545f2386,
         type: 3}
