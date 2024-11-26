@@ -568,7 +568,7 @@ PrefabInstance:
     - target: {fileID: 3420101192621516722, guid: 64ab1ec8a68096e46b15ab1b5032cfac,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3420101192621516722, guid: 64ab1ec8a68096e46b15ab1b5032cfac,
         type: 3}
@@ -578,7 +578,7 @@ PrefabInstance:
     - target: {fileID: 3420101192621516722, guid: 64ab1ec8a68096e46b15ab1b5032cfac,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3420101192621516722, guid: 64ab1ec8a68096e46b15ab1b5032cfac,
         type: 3}
@@ -593,11 +593,16 @@ PrefabInstance:
     - target: {fileID: 3420101192621516722, guid: 64ab1ec8a68096e46b15ab1b5032cfac,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 3420101192621516722, guid: 64ab1ec8a68096e46b15ab1b5032cfac,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351312038856844295, guid: 64ab1ec8a68096e46b15ab1b5032cfac,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8463213875068675165, guid: 64ab1ec8a68096e46b15ab1b5032cfac,
@@ -606,7 +611,8 @@ PrefabInstance:
       value: Cedric_NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1247307965764248150, guid: 64ab1ec8a68096e46b15ab1b5032cfac, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64ab1ec8a68096e46b15ab1b5032cfac, type: 3}

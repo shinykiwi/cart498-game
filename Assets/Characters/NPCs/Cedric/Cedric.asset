@@ -23,8 +23,8 @@ MonoBehaviour:
       index: 0
       isKeyDuplicated: 0
   Stat:
-    json: "{\r\n  \"progression\": 1.0\r\n}"
+    json: "{\r\n  \"progression\": 0.0\r\n}"
   Topics: []
   Relationships:
     dictionaryList: []
-  DialogueAttempts: 710
+  DialogueAttempts: 722

@@ -29,7 +29,6 @@ public class Npc : MonoBehaviour
         if (dialogueTrigger)
         {
             dialogueTrigger.Display();
-            dialogueUI.GetComponent<Canvas>().enabled = false;
             dialogueUI.GetComponent<Canvas>().enabled = true;
         }
     }
@@ -39,6 +38,8 @@ public class Npc : MonoBehaviour
         Debug.Log("convo ended!");
         Debug.Log(descantActor.Stat.ToString());
         OnEnd?.Invoke();
+        dialogueUI.GetComponent<Canvas>().enabled = false;
+        
     }
 
     private void OnEnable()

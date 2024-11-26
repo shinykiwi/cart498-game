@@ -61,6 +61,8 @@ public class Player : MonoBehaviour
         
         if (Physics.Raycast(ray, out hitData, rayDistance, layer))
         {
+            
+            //Debug.Log(hitData.collider.name);
             if (!talking)
             {
                 hud.Show();
