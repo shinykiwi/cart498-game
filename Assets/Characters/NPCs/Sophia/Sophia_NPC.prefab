@@ -156,11 +156,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7125059323526744250, guid: c8c93bd7e9bed344ca91343d70d2bfbd,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8672710659974318216, guid: b9240069eb6986f488fc0dd23e09ef80,
+        type: 3}
+    - target: {fileID: -7125059323526744250, guid: c8c93bd7e9bed344ca91343d70d2bfbd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ce52071dea9fa9147abe4e4a0b6bed24, type: 2}
+    - target: {fileID: 710425605648191702, guid: c8c93bd7e9bed344ca91343d70d2bfbd,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2448191870151505386, guid: b9240069eb6986f488fc0dd23e09ef80,
+        type: 3}
+    - target: {fileID: 710425605648191702, guid: c8c93bd7e9bed344ca91343d70d2bfbd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ce52071dea9fa9147abe4e4a0b6bed24, type: 2}
     - target: {fileID: 919132149155446097, guid: c8c93bd7e9bed344ca91343d70d2bfbd,
         type: 3}
       propertyPath: m_Name
       value: NPC4_Tpose
       objectReference: {fileID: 0}
+    - target: {fileID: 4372696213984484736, guid: c8c93bd7e9bed344ca91343d70d2bfbd,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -1806535921328843698, guid: b9240069eb6986f488fc0dd23e09ef80,
+        type: 3}
+    - target: {fileID: 4372696213984484736, guid: c8c93bd7e9bed344ca91343d70d2bfbd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ce52071dea9fa9147abe4e4a0b6bed24, type: 2}
+    - target: {fileID: 5570364400159165990, guid: c8c93bd7e9bed344ca91343d70d2bfbd,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2265842656326621026, guid: b9240069eb6986f488fc0dd23e09ef80,
+        type: 3}
+    - target: {fileID: 5570364400159165990, guid: c8c93bd7e9bed344ca91343d70d2bfbd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ce52071dea9fa9147abe4e4a0b6bed24, type: 2}
     - target: {fileID: 5866666021909216657, guid: c8c93bd7e9bed344ca91343d70d2bfbd,
         type: 3}
       propertyPath: m_Controller
@@ -171,6 +215,17 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6286466091052676466, guid: c8c93bd7e9bed344ca91343d70d2bfbd,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -8683504737640945971, guid: b9240069eb6986f488fc0dd23e09ef80,
+        type: 3}
+    - target: {fileID: 6286466091052676466, guid: c8c93bd7e9bed344ca91343d70d2bfbd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ce52071dea9fa9147abe4e4a0b6bed24, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
