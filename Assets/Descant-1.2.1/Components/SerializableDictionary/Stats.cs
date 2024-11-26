@@ -19,9 +19,17 @@ namespace Descant.Components
 
         public void AddEntry(string key, float value)
         {
-            Debug.Log("Adding " + key + " to dictionary. \n");
-            dictionary.Add(key, value);
-            Serialize();
+            if (!dictionary.ContainsKey(key))
+            {
+                Debug.Log("Adding " + key + " to dictionary. \n");
+                dictionary.Add(key, value);
+                Serialize();
+            }
+            else
+            {
+                Debug.Log(key + " is already in the dictionary.");
+            }
+            
         }
 
         public void RemoveEntry(string key)
@@ -79,8 +87,17 @@ namespace Descant.Components
 
         public float GetValue(string key)
         {
-            Debug.Log("Stats.GetValue(): Returning " + key + ".");
-            return dictionary[key];
+            if (dictionary.ContainsKey(key))
+            {
+                Debug.Log("Stats.GetValue(): Returning " + key + ".");
+                return dictionary[key];
+            }
+            
+            Debug.Log("Stats.GetValue(): Error, could not find key " + key + " in dictionary.");
+            
+
+            return -1f;
+
         }
 
         public override string ToString()

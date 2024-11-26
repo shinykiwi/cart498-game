@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int rayDistance = 5;
     
     private RaycastHit hitData; 
-    private ThirdPersonController movement;
+    private FirstPersonController movement;
     private StarterAssetsInputs input;
     private bool talking = false;
     private Npc lastTalkedTo = null;
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         input = GetComponent<StarterAssetsInputs>();
-        movement = GetComponent<ThirdPersonController>();
+        movement = GetComponent<FirstPersonController>();
         mailbagObject = Instantiate(mailbagObject);
         mailbag = mailbagObject.GetComponent<MailBag>();
 

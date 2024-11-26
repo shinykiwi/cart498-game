@@ -1,0 +1,240 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce95f313843e48d1a4b8cf6050141954, type: 3}
+  m_Name: CedricGraph
+  m_EditorClassIdentifier: 
+  Autosave: 0
+  Advanced: 1
+  PannedPosition: {x: -1847.5, y: 3.5, z: 0}
+  ScrolledScale: {x: 1, y: 1, z: 1}
+  Typewriter: 1
+  TypewriterSpeed: 2
+  ChoiceNodeID: 9
+  ResponseNodeID: 12
+  IfNodeID: 3
+  EndNodeID: 9
+  GroupID: 5
+  ChoiceNodes:
+  - Name: ChoiceNode
+    Type: Choice
+    ID: 1
+    Position: {x: 954, y: 0}
+    NodeComponents:
+    - rid: 5730410734843855129
+    - rid: 5730410774056403662
+    Comments: 
+    Choices:
+    - I'm here to pick up today's mail.
+    - '[Give item] There''s a letter for you.'
+    - '[Leave] See you later. '
+  - Name: ChoiceNode
+    Type: Choice
+    ID: 7
+    Position: {x: 2848, y: -598}
+    NodeComponents: []
+    Comments: 
+    Choices:
+    - Will do.
+    - Sure, what's your name?
+  ResponseNodes:
+  - Name: ResponseNode
+    Type: Response
+    ID: 0
+    Position: {x: 387, y: -121}
+    NodeComponents: []
+    Comments: 
+    Response: What can I do for you, sir?
+  - Name: ResponseNode
+    Type: Response
+    ID: 1
+    Position: {x: 1632, y: -607}
+    NodeComponents:
+    - rid: 5730410774056403433
+    Comments: 
+    Response: Ah right, you're the new deliverer I asked for. Thanks for showing
+      up.
+  - Name: ResponseNode
+    Type: Response
+    ID: 2
+    Position: {x: 1632, y: 0}
+    NodeComponents: []
+    Comments: 
+    Response: Oh really? Must have missed that one, thanks!
+  - Name: ResponseNode
+    Type: Response
+    ID: 6
+    Position: {x: 2237, y: -438}
+    NodeComponents: []
+    Comments: 
+    Response: I'm still processing today's mail, so in the meantime could you grab
+      those older letters there and deliver them?
+  - Name: ResponseNode
+    Type: Response
+    ID: 10
+    Position: {x: 3469, y: -612}
+    NodeComponents: []
+    Comments: 
+    Response: My name's Santi Reed. It's a pleasure to meet you.
+  - Name: ResponseNode
+    Type: Response
+    ID: 11
+    Position: {x: 4002, y: -612}
+    NodeComponents: []
+    Comments: 
+    Response: Come back to me once you've done those letters.
+  IfNodes: []
+  StartNode:
+    Name: StartNode
+    Type: Start
+    ID: 0
+    Position: {x: -42, y: -121}
+    NodeComponents: []
+    Comments: 
+  EndNodes:
+  - Name: EndNode
+    Type: End
+    ID: 2
+    Position: {x: 1632, y: 330}
+    NodeComponents: []
+    Comments: 
+  - Name: EndNode
+    Type: End
+    ID: 5
+    Position: {x: 4601, y: -655}
+    NodeComponents: []
+    Comments: 
+  - Name: EndNode
+    Type: End
+    ID: 8
+    Position: {x: 2286, y: 0}
+    NodeComponents:
+    - rid: 5730410734804800397
+    Comments: 
+  Groups:
+  - Name: Answers
+    ID: 0
+    Position: {x: 1607.0001, y: -665.5}
+    Nodes:
+    - Response
+    - Response
+    - End
+    NodeIDs: 010000000200000002000000
+    Comments: 
+  - Name: Start
+    ID: 1
+    Position: {x: -67, y: -179.5}
+    Nodes:
+    - Response
+    - Start
+    - Choice
+    NodeIDs: 000000000000000001000000
+    Comments: 
+  Connections:
+  - From: Choice
+    FromID: 1
+    FromIndex: 1
+    To: Response
+    ToID: 1
+  - From: Choice
+    FromID: 1
+    FromIndex: 2
+    To: Response
+    ToID: 2
+  - From: Choice
+    FromID: 1
+    FromIndex: 3
+    To: End
+    ToID: 2
+  - From: Choice
+    FromID: 7
+    FromIndex: 1
+    To: Response
+    ToID: 11
+  - From: Choice
+    FromID: 7
+    FromIndex: 2
+    To: Response
+    ToID: 10
+  - From: Response
+    FromID: 0
+    FromIndex: 0
+    To: Choice
+    ToID: 1
+  - From: Response
+    FromID: 1
+    FromIndex: 0
+    To: Response
+    ToID: 6
+  - From: Response
+    FromID: 2
+    FromIndex: 0
+    To: End
+    ToID: 8
+  - From: Response
+    FromID: 6
+    FromIndex: 0
+    To: Choice
+    ToID: 7
+  - From: Response
+    FromID: 10
+    FromIndex: 0
+    To: Response
+    ToID: 11
+  - From: Response
+    FromID: 11
+    FromIndex: 0
+    To: End
+    ToID: 5
+  - From: Start
+    FromID: 0
+    FromIndex: 0
+    To: Response
+    ToID: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 5730410734804800397
+      type: {class: Event, ns: Descant.Components, asm: omch.descant.components}
+      data:
+        Collapsed: 0
+        ObjectTag: 
+        ScriptName: MailBag
+        MethodName: GiveLetter
+        Parameter: 
+    - rid: 5730410734843855129
+      type: {class: LockedChoice, ns: Descant.Components, asm: omch.descant.components}
+      data:
+        Collapsed: 0
+        Actor: {fileID: 11400000, guid: 8cd3e26834366fc4e9e9c6ac3be2b63d, type: 2}
+        ChoiceNumber: 1
+        VariableType: 4
+        VariableName: progression
+        ComparisonType: 4
+        Comparison: 0
+    - rid: 5730410774056403433
+      type: {class: StatChange, ns: Descant.Components, asm: omch.descant.components}
+      data:
+        Collapsed: 0
+        Actor: {fileID: 11400000, guid: 8cd3e26834366fc4e9e9c6ac3be2b63d, type: 2}
+        StatisticName: progression
+        OperationType: 0
+        OperationValue: 1
+    - rid: 5730410774056403662
+      type: {class: LockedChoice, ns: Descant.Components, asm: omch.descant.components}
+      data:
+        Collapsed: 0
+        Actor: {fileID: 11400000, guid: 4da36e944c361124181397e78ca17652, type: 2}
+        ChoiceNumber: 2
+        VariableType: 4
+        VariableName: letterCount
+        ComparisonType: 0
+        Comparison: 1

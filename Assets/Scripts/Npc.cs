@@ -10,7 +10,9 @@ public class Npc : MonoBehaviour
     private DescantDialogueTrigger dialogueTrigger;
     private DescantDialogueUI dialogueUI;
 
-    [SerializeField] private string name = "Joe";
+    [SerializeField] private string name;
+    [SerializeField] private string newName;
+    [SerializeField] private int roomNumber;
 
     [SerializeField] private DescantActor descantActor;
     

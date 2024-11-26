@@ -1,0 +1,282 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce95f313843e48d1a4b8cf6050141954, type: 3}
+  m_Name: WallyGraph
+  m_EditorClassIdentifier: 
+  Autosave: 0
+  Advanced: 1
+  PannedPosition: {x: -1040, y: 642, z: 0}
+  ScrolledScale: {x: 0.2842624, y: 0.2842624, z: 1}
+  Typewriter: 1
+  TypewriterSpeed: 2
+  ChoiceNodeID: 11
+  ResponseNodeID: 21
+  IfNodeID: 3
+  EndNodeID: 9
+  GroupID: 5
+  ChoiceNodes:
+  - Name: ChoiceNode
+    Type: Choice
+    ID: 1
+    Position: {x: 954, y: 0}
+    NodeComponents: []
+    Comments: 
+    Choices:
+    - I'm the new employee you hired?
+    - '[Leave] Goodbye.'
+  - Name: ChoiceNode
+    Type: Choice
+    ID: 9
+    Position: {x: 3343, y: -612}
+    NodeComponents: []
+    Comments: 
+    Choices:
+    - Yes, I'm familiar with the procedures.
+    - No, I'm brand new.
+  - Name: ChoiceNode
+    Type: Choice
+    ID: 10
+    Position: {x: 5489, y: -485}
+    NodeComponents: []
+    Comments: 
+    Choices:
+    - Ah...I think I get it.
+    - No, I'm not sure what you mean.
+  ResponseNodes:
+  - Name: ResponseNode
+    Type: Response
+    ID: 0
+    Position: {x: 387, y: -121}
+    NodeComponents: []
+    Comments: 
+    Response: Welcome to Sleepy Haven Motel. How can I help you?
+  - Name: ResponseNode
+    Type: Response
+    ID: 1
+    Position: {x: 1632, y: -607}
+    NodeComponents: []
+    Comments: 
+    Response: Oh yes! My name is Wally, it's a pleasure to meet you.
+  - Name: ResponseNode
+    Type: Response
+    ID: 6
+    Position: {x: 2239, y: -607}
+    NodeComponents: []
+    Comments: 
+    Response: We don't get many new hires here at Sleepy Haven.
+  - Name: ResponseNode
+    Type: Response
+    ID: 10
+    Position: {x: 2788, y: -607}
+    NodeComponents: []
+    Comments: 
+    Response: I'm guessing management already gave you the rundown?
+  - Name: ResponseNode
+    Type: Response
+    ID: 11
+    Position: {x: 4711, y: -849}
+    NodeComponents: []
+    Comments: 
+    Response: Come back to me once you've done those letters.
+  - Name: ResponseNode
+    Type: Response
+    ID: 12
+    Position: {x: 3896, y: -485}
+    NodeComponents: []
+    Comments: 
+    Response: '*Sighs* So typical of management to not train a new hire.'
+  - Name: ResponseNode
+    Type: Response
+    ID: 13
+    Position: {x: 3917, y: -945}
+    NodeComponents: []
+    Comments: 
+    Response: Glad to hear management is doing something these days.
+  - Name: ResponseNode
+    Type: Response
+    ID: 14
+    Position: {x: 4417, y: -485}
+    NodeComponents: []
+    Comments: 
+    Response: Well, welcome to Sleepy Haven Motel. We have average looking rooms
+      and average tasting food.
+  - Name: ResponseNode
+    Type: Response
+    ID: 15
+    Position: {x: 4941, y: -485}
+    NodeComponents: []
+    Comments: 
+    Response: People come here looking for a getaway, a fresh start. We do that for
+      them. You get it, don't you?
+  - Name: ResponseNode
+    Type: Response
+    ID: 17
+    Position: {x: 6062, y: -646}
+    NodeComponents: []
+    Comments: 
+    Response: Good. Here's your cases from management.
+  - Name: ResponseNode
+    Type: Response
+    ID: 18
+    Position: {x: 6062, y: -344}
+    NodeComponents: []
+    Comments: 
+    Response: When people stay here, they leave a different person. And that's our
+      job.
+  - Name: ResponseNode
+    Type: Response
+    ID: 19
+    Position: {x: 6604, y: -344}
+    NodeComponents: []
+    Comments: 
+    Response: Here, take these cases from management. Make sure they get to the right
+      people.
+  - Name: ResponseNode
+    Type: Response
+    ID: 20
+    Position: {x: 7162, y: -646}
+    NodeComponents: []
+    Comments: 
+    Response: Come back to me if you have any questions.
+  IfNodes: []
+  StartNode:
+    Name: StartNode
+    Type: Start
+    ID: 0
+    Position: {x: -42, y: -121}
+    NodeComponents: []
+    Comments: 
+  EndNodes:
+  - Name: EndNode
+    Type: End
+    ID: 2
+    Position: {x: 1711, y: -311}
+    NodeComponents: []
+    Comments: 
+  - Name: EndNode
+    Type: End
+    ID: 5
+    Position: {x: 7724, y: -646}
+    NodeComponents: []
+    Comments: 
+  Groups:
+  - Name: Answers
+    ID: 0
+    Position: {x: 1607.0001, y: -666}
+    Nodes:
+    - Response
+    - End
+    NodeIDs: 0100000002000000
+    Comments: 
+  - Name: Start
+    ID: 1
+    Position: {x: -67, y: -180}
+    Nodes:
+    - Response
+    - Start
+    - Choice
+    NodeIDs: 000000000000000001000000
+    Comments: 
+  Connections:
+  - From: Choice
+    FromID: 1
+    FromIndex: 1
+    To: Response
+    ToID: 1
+  - From: Choice
+    FromID: 1
+    FromIndex: 2
+    To: End
+    ToID: 2
+  - From: Choice
+    FromID: 9
+    FromIndex: 1
+    To: Response
+    ToID: 17
+  - From: Choice
+    FromID: 9
+    FromIndex: 2
+    To: Response
+    ToID: 12
+  - From: Choice
+    FromID: 10
+    FromIndex: 1
+    To: Response
+    ToID: 17
+  - From: Choice
+    FromID: 10
+    FromIndex: 2
+    To: Response
+    ToID: 18
+  - From: Response
+    FromID: 0
+    FromIndex: 0
+    To: Choice
+    ToID: 1
+  - From: Response
+    FromID: 1
+    FromIndex: 0
+    To: Response
+    ToID: 6
+  - From: Response
+    FromID: 6
+    FromIndex: 0
+    To: Response
+    ToID: 10
+  - From: Response
+    FromID: 10
+    FromIndex: 0
+    To: Choice
+    ToID: 9
+  - From: Response
+    FromID: 12
+    FromIndex: 0
+    To: Response
+    ToID: 14
+  - From: Response
+    FromID: 14
+    FromIndex: 0
+    To: Response
+    ToID: 15
+  - From: Response
+    FromID: 15
+    FromIndex: 0
+    To: Choice
+    ToID: 10
+  - From: Response
+    FromID: 17
+    FromIndex: 0
+    To: Response
+    ToID: 20
+  - From: Response
+    FromID: 18
+    FromIndex: 0
+    To: Response
+    ToID: 19
+  - From: Response
+    FromID: 19
+    FromIndex: 0
+    To: Response
+    ToID: 20
+  - From: Response
+    FromID: 20
+    FromIndex: 0
+    To: End
+    ToID: 5
+  - From: Start
+    FromID: 0
+    FromIndex: 0
+    To: Response
+    ToID: 0
+  references:
+    version: 2
+    RefIds: []
