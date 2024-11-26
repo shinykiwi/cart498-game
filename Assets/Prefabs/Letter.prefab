@@ -68,6 +68,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Letter
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 93b3ef5aa4dfc4725aefbc3cfa2341ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -121,7 +126,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39efad8386d0d0640a0eedc89e15c7c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signatureRequired: 0
-  sender: Joe Non
-  recipient: Joe Non
-  sprite: {fileID: 21300000, guid: 40566b83f327aea4aac98797ff63ed6e, type: 3}
+  npc: {fileID: 0}

@@ -5,21 +5,8 @@ using UnityEngine;
 /// </summary>
 public class Letter : MonoBehaviour
 {
-    [Tooltip("Can the mail be dropped off at a residence without handing it to someone?")]
-    [SerializeField] private bool signatureRequired = false;
-    
-    [Tooltip("The person who sent the mail, first and last name. Leave as null for anonymous sender.")]
-    [SerializeField] private string sender = null;
-
-    [Tooltip("The person who is meant to receive the mail, first and last name. Leave as null for unknown.")]
-    [SerializeField] private string recipient = null;
-
-    [Tooltip("The actual contents of what the letter says.")]
-    [TextArea]
-    [SerializeField] private string contents = null;
-    
-    [Tooltip("The icon associated with this letter.")]
-    [SerializeField] private Sprite sprite;
+    [Tooltip("The NPC associated with this letter.")]
+    [SerializeField] private Npc npc;
      
     // ID counter shared across all letters
     private static int id = 1;
@@ -54,49 +41,9 @@ public class Letter : MonoBehaviour
         return letterID;
     }
 
-    /// <summary>
-    /// Gets the sprite image associated with the letter.
-    /// </summary>
-    /// <returns>Sprite</returns>
-    public Sprite GetSprite()
+    public Npc GetNpc()
     {
-        return sprite;
-    }
-
-    /// <summary>
-    /// Gets the person who sent the message.
-    /// </summary>
-    /// <returns>string</returns>
-    public string GetSender()
-    {
-        return sender;
-    }
-
-    /// <summary>
-    /// Gets the person who is meant to receive the message.
-    /// </summary>
-    /// <returns>string</returns>
-    public string GetRecipient()
-    {
-        return recipient;
-    }
-
-    /// <summary>
-    /// Gets whether the letter must be hand delivered or not.
-    /// </summary>
-    /// <returns>bool</returns>
-    public bool IsSignatureRequired()
-    {
-        return signatureRequired;
-    }
-
-    /// <summary>
-    /// Gets the contents of the letter (the body).
-    /// </summary>
-    /// <returns>string</returns>
-    public string GetContents()
-    {
-        return contents;
+        return npc;
     }
     
     /// <summary>
@@ -106,6 +53,11 @@ public class Letter : MonoBehaviour
     /// <returns>string</returns>
     public override string ToString()
     {
-        return "Letter to " + recipient;
+        if (npc)
+        {
+            return npc.GetNewName();
+        }
+        
+        return "File";
     }
 }

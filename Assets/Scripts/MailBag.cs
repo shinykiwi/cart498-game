@@ -10,6 +10,11 @@ public class MailBag : MonoBehaviour
     #region Serialized Fields
     [Tooltip("The title text used for displaying the title of the letter.")]
     [SerializeField] private TextMeshProUGUI title;
+
+    [Tooltip("The photo of the identity to display.")] [SerializeField]
+    private Image photo;
+
+    private Sprite defaultPhoto;
     
     [Tooltip("The text used for displaying the body of the letter.")]
     [SerializeField] private TextMeshProUGUI paragraph;
@@ -81,7 +86,9 @@ public class MailBag : MonoBehaviour
     {
         ui = GetComponentInChildren<Canvas>();
         slots = ui.GetComponentsInChildren<Slot>(); // Gets all of the slots found
-        post = GetComponent<Volume>(); 
+        post = GetComponent<Volume>();
+
+        defaultPhoto = photo.sprite;
         
         letterCapacity = slots.Length;
         letters = new Letter[letterCapacity];
@@ -109,7 +116,7 @@ public class MailBag : MonoBehaviour
             letters[letterCount] = letter; // add the letter
             letter.gameObject.GetComponent<MeshRenderer>().enabled = false; // make letter invisible
             letter.gameObject.GetComponent<Collider>().enabled = false;
-            slots[letterCount].Fill(letter.GetSprite()); // show image in slot
+            slots[letterCount].Fill(letter.GetNpc().GetImage()); // show image in slot
             DisplayLetterInfo(letterCount);
             
             // Increase letter count locally and in DescantActor
@@ -236,8 +243,9 @@ public class MailBag : MonoBehaviour
     {
         if (index == -1)
         {
-            title.text = "Select a letter.";
-            paragraph.text = "Choose any letter from your bag to read it";
+            title.text = "Select an identity.";
+            paragraph.text = "Choose any identity from your bag to read it.";
+            photo.sprite = defaultPhoto;
 
         }
         else
@@ -245,7 +253,8 @@ public class MailBag : MonoBehaviour
             if (letters[index])
             {
                 title.text = letters[index].ToString();
-                paragraph.text = letters[index].GetContents();
+                paragraph.text = letters[index].GetNpc().GetSummary();
+                photo.sprite = letters[index].GetNpc().GetImage();
             }
         }
         

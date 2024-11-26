@@ -3,6 +3,7 @@ using Cinemachine;
 using Descant.Components;
 using StarterAssets;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 public class Player : MonoBehaviour
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour
     private RaycastHit hitData; 
     private FirstPersonController movement;
     private StarterAssetsInputs input;
+    private PlayerInput playerInput;
     private bool talking = false;
     private Npc lastTalkedTo = null;
     private MailBag mailbag;
@@ -25,6 +27,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         input = GetComponent<StarterAssetsInputs>();
+        playerInput = GetComponent<PlayerInput>();
         movement = GetComponent<FirstPersonController>();
         mailbagObject = Instantiate(mailbagObject);
         mailbag = mailbagObject.GetComponent<MailBag>();
@@ -42,7 +45,7 @@ public class Player : MonoBehaviour
         {
             mailbag.Toggle();
             ToggleCursor();
-            input.enabled = !input.enabled;
+            playerInput.enabled = !playerInput.enabled;
         }
     }
 

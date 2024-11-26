@@ -49,8 +49,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Cedric Holt
+  age: 20
+  occupation: Bartender
   newName: Kenneth Granger
   roomNumber: 101
+  location: 0
+  status: 0
+  image: {fileID: 21300000, guid: 9823d7b528c19b645a334fe22fe429a9, type: 3}
   descantActor: {fileID: 11400000, guid: 8cd3e26834366fc4e9e9c6ac3be2b63d, type: 2}
 --- !u!114 &1593664388637726167
 MonoBehaviour:

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49fd40c39f0449118e62758ae3bb230e, type: 3}
-  m_Name: Wally
+  m_Name: Elena
   m_EditorClassIdentifier: 
   PortraitEnabled: 1
   Portrait: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
@@ -23,8 +23,8 @@ MonoBehaviour:
       index: 0
       isKeyDuplicated: 0
   Stat:
-    json: "{\r\n  \"progression\": 0.0\r\n}"
+    json: "{\r\n  \"progression\": 1.0\r\n}"
   Topics: []
   Relationships:
     dictionaryList: []
-  DialogueAttempts: 785
+  DialogueAttempts: 710

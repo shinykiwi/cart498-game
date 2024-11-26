@@ -364,7 +364,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9823d7b528c19b645a334fe22fe429a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bb8566673378c6f428d7d64444964ce5, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3844,6 +3844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: {fileID: 4073332527264828285}
+  photo: {fileID: 7869550409896614830}
   paragraph: {fileID: 3371383091126307916}
   giveButton: {fileID: 1328122359709086911}
   readButton: {fileID: 8964176561818015339}

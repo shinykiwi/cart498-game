@@ -5,17 +5,60 @@ using Descant.Components;
 using Descant.Runtime;
 using UnityEngine;
 
+public enum Location
+{
+    City, 
+    Town,
+    Farm
+}
+
+public enum Status
+{
+    Single,
+    Married,
+    Divorced,
+    Widowed
+}
 public class Npc : MonoBehaviour
 {
     private DescantDialogueTrigger dialogueTrigger;
     private DescantDialogueUI dialogueUI;
 
     [SerializeField] private string name;
+    [SerializeField] private int age;
+    [SerializeField] private string occupation;
     [SerializeField] private string newName;
     [SerializeField] private int roomNumber;
-
+    [SerializeField] private Location location;
+    [SerializeField] private Status status;
+    [SerializeField] private Sprite image;
     [SerializeField] private DescantActor descantActor;
+
     
+
+    public string GetNewName()
+    {
+        return newName;
+    }
+
+    public string GetName()
+    {
+        return name;
+    }
+
+    public int GetRoomNumber()
+    {
+        return roomNumber;
+    }
+
+    public Sprite GetImage()
+    {
+        return image;}
+
+    public string GetSummary()
+    {
+        return "Age " + age + ", works as a " + occupation.ToLower() + " in a " + location.ToString().ToLower() + ". They are " + status.ToString().ToLower() + ".";
+    }
     public event Action OnEnd;
     private void Awake()
     {
