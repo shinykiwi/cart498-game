@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
         {
             mailbag.Toggle();
             ToggleCursor();
+            input.enabled = !input.enabled;
         }
     }
 
@@ -98,6 +99,7 @@ public class Player : MonoBehaviour
                         
                         ToggleTalking();
                         npc.TalkTo(); // calls descant dialogue trigger to display
+                        npcLookAtCamera.LookAt = npc.transform; // Swivels to look at NPC
                     }
                     
                 }

@@ -16,6 +16,12 @@ public class MailBag : MonoBehaviour
 
     [Tooltip("The button to press that will give the item over.")]
     [SerializeField] private GameObject giveButton;
+
+    [Tooltip("The button to press to read the case.")]
+    [SerializeField] private GameObject readButton;
+
+    [Tooltip("Popup for the cases.")] [SerializeField]
+    private GameObject caseReader;
     
     [Tooltip("The descant actor of the player, to change letterCapacity value.")]
     [SerializeField] private DescantActor descantActor;
@@ -189,6 +195,32 @@ public class MailBag : MonoBehaviour
         RemoveLetter();
     }
 
+    public void OnReadButtonClick()
+    {
+        ShowCaseReader();
+        
+    }
+
+    public void OnCloseButtonClick()
+    {
+        HideCaseReader();
+    }
+
+    private void ShowCaseReader()
+    {
+        caseReader.SetActive(true);
+        // Should play paper shuffling sound
+    }
+
+    private void HideCaseReader()
+    {
+        caseReader.SetActive(false);
+    }
+
+    public void UpdateCaseReader()
+    {
+        Debug.Log("Updating case reader");
+    }
     
     private int FindLetterIdx(Slot slot)
     {
@@ -251,6 +283,10 @@ public class MailBag : MonoBehaviour
     {
         ui.enabled = !ui.enabled;
         post.enabled = !post.enabled;
+        if (!ui.enabled)
+        {
+            HideCaseReader();
+        }
     }
 
     public bool IsFull()
