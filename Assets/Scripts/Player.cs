@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     private bool talking = false;
     private Npc lastTalkedTo = null;
     private MailBag mailbag;
+
+    private int coffeeCount = 0;
     [SerializeField] private GameObject mailbagObject;
 
     [SerializeField] private UIManager uiManager;
@@ -65,8 +67,6 @@ public class Player : MonoBehaviour
         
         if (Physics.Raycast(ray, out hitData, rayDistance, layer))
         {
-            
-            //Debug.Log(hitData.collider.name);
             if (!talking)
             {
                 hud.Show();
@@ -95,6 +95,39 @@ public class Player : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     mailbag.AddLetter(letter);
+                }
+            }
+            
+            // Handling coffee
+            else if (hitData.collider.GetComponent<Coffee>() is { } coffee)
+            {
+                if (coffee.CanBePickedUp())
+                {
+                    hud.SetActionText(coffee.ToString());
+                
+                    // If E is pressed then do something
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        coffee.Hide();
+                        coffeeCount++;
+                    }
+                }
+
+            }
+            
+            else if (hitData.collider.GetComponent<Tray>() is { } tray)
+            {
+                if (tray.IsEmpty())
+                {
+                    hud.SetActionText("Place coffee");
+                    
+                    // If E is pressed
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        tray.PlaceCoffee();
+                    }
+                    
+                   
                 }
             }
             

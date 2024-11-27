@@ -34,7 +34,6 @@ public class Npc : MonoBehaviour
     [SerializeField] private Sprite image;
     [SerializeField] private DescantActor descantActor;
 
-
     public int GetAge()
     {
         return age;
@@ -87,6 +86,10 @@ public class Npc : MonoBehaviour
         descantActor.Stat.AddEntry("progression", 0);
     }
 
+    public void GiveCoffee()
+    {
+        descantActor.Stat.IncreaseBy("progression", 1);
+    }
     public void TalkTo()
     {
         if (dialogueTrigger)
@@ -124,6 +127,10 @@ public class Npc : MonoBehaviour
 
     public override string ToString()
     {
-        return "Talk to " + newName;
+        if (roomNumber == 0)
+        {
+            return "Talk to " + name;
+        }
+        return "Talk to " + roomNumber;
     }
 }

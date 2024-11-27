@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Autosave: 0
   Advanced: 1
-  PannedPosition: {x: -337, y: 395, z: 0}
-  ScrolledScale: {x: 0.49717674, y: 0.49717674, z: 1}
+  PannedPosition: {x: -763.5, y: 155, z: 0}
+  ScrolledScale: {x: 0.57175326, y: 0.57175326, z: 1}
   Typewriter: 1
-  TypewriterSpeed: 2
+  TypewriterSpeed: 3
   ChoiceNodeID: 9
   ResponseNodeID: 12
   IfNodeID: 3
@@ -30,11 +30,10 @@ MonoBehaviour:
     Position: {x: 954, y: 0}
     NodeComponents:
     - rid: 5730410734843855129
-    - rid: 5730410774056403662
     Comments: 
     Choices:
     - I've delivered your coffee order.
-    - 
+    - What brings you to the motel?
     - '[Leave] See you later. '
   ResponseNodes:
   - Name: ResponseNode
@@ -48,7 +47,8 @@ MonoBehaviour:
     Type: Response
     ID: 1
     Position: {x: 1632, y: -368}
-    NodeComponents: []
+    NodeComponents:
+    - rid: 5730411145480110357
     Comments: 
     Response: Oo yum! Thank you so much.
   - Name: ResponseNode
@@ -57,7 +57,7 @@ MonoBehaviour:
     Position: {x: 1632, y: 0}
     NodeComponents: []
     Comments: 
-    Response: Oh really? Must have missed that one, thanks!
+    Response: Trying to escape my past. Same as everyone else, I guess.
   IfNodes: []
   StartNode:
     Name: StartNode
@@ -72,13 +72,6 @@ MonoBehaviour:
     ID: 2
     Position: {x: 1632, y: 330}
     NodeComponents: []
-    Comments: 
-  - Name: EndNode
-    Type: End
-    ID: 8
-    Position: {x: 2556, y: 96}
-    NodeComponents:
-    - rid: 5730410734804800397
     Comments: 
   Groups:
   - Name: Answers
@@ -120,11 +113,6 @@ MonoBehaviour:
     FromIndex: 0
     To: Choice
     ToID: 1
-  - From: Response
-    FromID: 2
-    FromIndex: 0
-    To: End
-    ToID: 8
   - From: Start
     FromID: 0
     FromIndex: 0
@@ -133,31 +121,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 5730410734804800397
-      type: {class: Event, ns: Descant.Components, asm: omch.descant.components}
-      data:
-        Collapsed: 0
-        ObjectTag: 
-        ScriptName: MailBag
-        MethodName: GiveLetter
-        Parameter: 
     - rid: 5730410734843855129
       type: {class: LockedChoice, ns: Descant.Components, asm: omch.descant.components}
       data:
         Collapsed: 0
-        Actor: {fileID: 11400000, guid: 8cd3e26834366fc4e9e9c6ac3be2b63d, type: 2}
+        Actor: {fileID: 11400000, guid: 076491d23fca17a4f9ac1bef4bb6d8f3, type: 2}
         ChoiceNumber: 1
         VariableType: 4
         VariableName: progression
-        ComparisonType: 4
-        Comparison: 0
-    - rid: 5730410774056403662
-      type: {class: LockedChoice, ns: Descant.Components, asm: omch.descant.components}
+        ComparisonType: 5
+        Comparison: 1
+    - rid: 5730411145480110357
+      type: {class: StatChange, ns: Descant.Components, asm: omch.descant.components}
       data:
         Collapsed: 0
-        Actor: {fileID: 11400000, guid: 4da36e944c361124181397e78ca17652, type: 2}
-        ChoiceNumber: 2
-        VariableType: 4
-        VariableName: letterCount
-        ComparisonType: 0
-        Comparison: 1
+        Actor: {fileID: 11400000, guid: 076491d23fca17a4f9ac1bef4bb6d8f3, type: 2}
+        StatisticName: progression
+        OperationType: 0
+        OperationValue: 1
