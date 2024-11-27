@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         FireRay();
         
         // Bring up the mailbag
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             mailbag.Toggle();
             ToggleCursor();
