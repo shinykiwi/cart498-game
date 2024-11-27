@@ -21,6 +21,7 @@ public class Door : MonoBehaviour
     [Tooltip("Sound effect that plays when leaving a building.")]
     [SerializeField] private AudioSource closeDoor;
     
+    
     /// <summary>
     /// The fade image, used for controlling the colour and opacity.
     /// </summary>

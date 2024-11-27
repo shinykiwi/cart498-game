@@ -83,9 +83,25 @@ public class Player : MonoBehaviour
                 }
             }
             
+            // Handling letters
+            else if (hitData.collider.GetComponent<Letter>() is { } letter)
+            {
+                // Prevents the following if the mailbag is already full
+                if (mailbag.IsFull()) return;
+                
+                hud.SetActionText(letter.ToString());
+
+                // If player presses E
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    mailbag.AddLetter(letter);
+                }
+            }
+            
             // Handling NPCs
             else if (hitData.collider.GetComponentInParent<Npc>() is { } npc)
             {
+                Debug.Log("npc");
                 hud.SetActionText(npc.ToString());
                 
                 // If E is pressed then do something
@@ -108,20 +124,7 @@ public class Player : MonoBehaviour
                     
                 }
             }
-            // Handling letters
-            else if (hitData.collider.GetComponentInParent<Letter>() is { } letter)
-            {
-                // Prevents the following if the mailbag is already full
-                if (mailbag.IsFull()) return;
-                
-                hud.SetActionText(letter.ToString());
-
-                // If player presses E
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    mailbag.AddLetter(letter);
-                }
-            }
+            
             else
             {
                 hud.Hide();
