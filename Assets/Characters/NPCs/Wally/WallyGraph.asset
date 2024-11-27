@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Autosave: 0
   Advanced: 1
-  PannedPosition: {x: -1040, y: 642, z: 0}
-  ScrolledScale: {x: 0.2842624, y: 0.2842624, z: 1}
+  PannedPosition: {x: -2055, y: 513, z: 0}
+  ScrolledScale: {x: 0.32690176, y: 0.32690176, z: 1}
   Typewriter: 1
   TypewriterSpeed: 2
   ChoiceNodeID: 11
@@ -123,7 +123,7 @@ MonoBehaviour:
     Position: {x: 6062, y: -646}
     NodeComponents: []
     Comments: 
-    Response: Good. Here's your cases from management.
+    Response: Good. Here's your identities from management.
   - Name: ResponseNode
     Type: Response
     ID: 18
@@ -138,8 +138,8 @@ MonoBehaviour:
     Position: {x: 6604, y: -344}
     NodeComponents: []
     Comments: 
-    Response: Here, take these cases from management. Make sure they get to the right
-      people.
+    Response: Here, take these identities from management. Make sure they get to
+      the right people.
   - Name: ResponseNode
     Type: Response
     ID: 20
@@ -171,7 +171,7 @@ MonoBehaviour:
   Groups:
   - Name: Answers
     ID: 0
-    Position: {x: 1607.0001, y: -666}
+    Position: {x: 1607, y: -665.99994}
     Nodes:
     - Response
     - End
@@ -179,7 +179,7 @@ MonoBehaviour:
     Comments: 
   - Name: Start
     ID: 1
-    Position: {x: -67, y: -180}
+    Position: {x: -67.00043, y: -180}
     Nodes:
     - Response
     - Start

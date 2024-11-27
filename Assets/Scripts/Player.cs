@@ -103,6 +103,7 @@ public class Player : MonoBehaviour
                         ToggleTalking();
                         npc.TalkTo(); // calls descant dialogue trigger to display
                         npcLookAtCamera.LookAt = npc.transform; // Swivels to look at NPC
+                        
                     }
                     
                 }
@@ -138,6 +139,7 @@ public class Player : MonoBehaviour
         talking = !talking;
         hud.Toggle();
         npcLookAtCamera.enabled = !npcLookAtCamera.enabled;
+        playerInput.enabled = !playerInput.enabled;
         ToggleCursor();
     }
 
