@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Autosave: 0
   Advanced: 1
-  PannedPosition: {x: -2055, y: 513, z: 0}
-  ScrolledScale: {x: 0.32690176, y: 0.32690176, z: 1}
+  PannedPosition: {x: -153, y: 240, z: 0}
+  ScrolledScale: {x: 0.25, y: 0.25, z: 1}
   Typewriter: 1
   TypewriterSpeed: 2
   ChoiceNodeID: 11
-  ResponseNodeID: 21
+  ResponseNodeID: 22
   IfNodeID: 3
   EndNodeID: 9
   GroupID: 5
@@ -76,17 +76,10 @@ MonoBehaviour:
   - Name: ResponseNode
     Type: Response
     ID: 10
-    Position: {x: 2788, y: -607}
+    Position: {x: 2803, y: -607}
     NodeComponents: []
     Comments: 
     Response: I'm guessing management already gave you the rundown?
-  - Name: ResponseNode
-    Type: Response
-    ID: 11
-    Position: {x: 4711, y: -849}
-    NodeComponents: []
-    Comments: 
-    Response: Come back to me once you've done those letters.
   - Name: ResponseNode
     Type: Response
     ID: 12
@@ -94,13 +87,6 @@ MonoBehaviour:
     NodeComponents: []
     Comments: 
     Response: '*Sighs* So typical of management to not train a new hire.'
-  - Name: ResponseNode
-    Type: Response
-    ID: 13
-    Position: {x: 3917, y: -945}
-    NodeComponents: []
-    Comments: 
-    Response: Glad to hear management is doing something these days.
   - Name: ResponseNode
     Type: Response
     ID: 14
@@ -123,30 +109,23 @@ MonoBehaviour:
     Position: {x: 6062, y: -646}
     NodeComponents: []
     Comments: 
-    Response: Good. Here's your identities from management.
-  - Name: ResponseNode
-    Type: Response
-    ID: 18
-    Position: {x: 6062, y: -344}
-    NodeComponents: []
-    Comments: 
-    Response: When people stay here, they leave a different person. And that's our
-      job.
-  - Name: ResponseNode
-    Type: Response
-    ID: 19
-    Position: {x: 6604, y: -344}
-    NodeComponents: []
-    Comments: 
-    Response: Here, take these identities from management. Make sure they get to
-      the right people.
+    Response: Well, your task for today is to deliver coffee to our guests. Also,
+      pick up any trash they have littered around, will ya?
   - Name: ResponseNode
     Type: Response
     ID: 20
-    Position: {x: 7162, y: -646}
+    Position: {x: 6653, y: -646}
     NodeComponents: []
     Comments: 
-    Response: Come back to me if you have any questions.
+    Response: Oh and we're a little short staffed at the moment, so would you mind
+      delivering those identities to the right folks when you get a chance?
+  - Name: ResponseNode
+    Type: Response
+    ID: 21
+    Position: {x: 7196, y: -646}
+    NodeComponents: []
+    Comments: 
+    Response: They're on the table over there. Thanks.
   IfNodes: []
   StartNode:
     Name: StartNode
@@ -165,13 +144,13 @@ MonoBehaviour:
   - Name: EndNode
     Type: End
     ID: 5
-    Position: {x: 7724, y: -646}
+    Position: {x: 7789.5, y: -646}
     NodeComponents: []
     Comments: 
   Groups:
   - Name: Answers
     ID: 0
-    Position: {x: 1607, y: -665.99994}
+    Position: {x: 1607.0004, y: -665.5}
     Nodes:
     - Response
     - End
@@ -179,7 +158,7 @@ MonoBehaviour:
     Comments: 
   - Name: Start
     ID: 1
-    Position: {x: -67.00043, y: -180}
+    Position: {x: -67.00049, y: -179.50006}
     Nodes:
     - Response
     - Start
@@ -216,7 +195,7 @@ MonoBehaviour:
     FromID: 10
     FromIndex: 2
     To: Response
-    ToID: 18
+    ToID: 17
   - From: Response
     FromID: 0
     FromIndex: 0
@@ -258,17 +237,12 @@ MonoBehaviour:
     To: Response
     ToID: 20
   - From: Response
-    FromID: 18
-    FromIndex: 0
-    To: Response
-    ToID: 19
-  - From: Response
-    FromID: 19
-    FromIndex: 0
-    To: Response
-    ToID: 20
-  - From: Response
     FromID: 20
+    FromIndex: 0
+    To: Response
+    ToID: 21
+  - From: Response
+    FromID: 21
     FromIndex: 0
     To: End
     ToID: 5
