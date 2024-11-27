@@ -49,10 +49,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Wally
   age: 0
-  occupation: 
+  occupation: Motel Staff
   newName: Wally
   roomNumber: 0
-  location: 0
+  location: 1
   status: 0
   image: {fileID: 0}
   descantActor: {fileID: 11400000, guid: cc9e5990e53ed194e8621da724daf170, type: 2}

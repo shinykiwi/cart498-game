@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Princess Elena
   age: 0
-  occupation: 
+  occupation: 20
   newName: Jane Marsh
   roomNumber: 106
   location: 0

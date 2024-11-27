@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Rowen O'Reilly
   age: 0
-  occupation: 
+  occupation: Hostess
   newName: Elizabeth Montgomery
   roomNumber: 102
   location: 0
