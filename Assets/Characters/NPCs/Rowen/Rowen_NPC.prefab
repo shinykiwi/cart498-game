@@ -49,8 +49,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Rowen O'Reilly
+  age: 0
+  occupation: 
   newName: Elizabeth Montgomery
   roomNumber: 102
+  location: 0
+  status: 0
+  image: {fileID: 0}
   descantActor: {fileID: 11400000, guid: 8cd14ce2f6674354b866dc753e23410a, type: 2}
 --- !u!114 &7534781379616834347
 MonoBehaviour:
@@ -161,6 +166,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8328466653881526668, guid: b60ff49971ab20d4bb9fe729d787963d,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -1797080591676964438, guid: 9f9066a2203e25448a4678e26d517eb8,
+        type: 3}
+    - target: {fileID: -8328466653881526668, guid: b60ff49971ab20d4bb9fe729d787963d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6539933af421e084f9c69ad5684569e4, type: 2}
     - target: {fileID: -8236615327842799068, guid: b60ff49971ab20d4bb9fe729d787963d,
         type: 3}
       propertyPath: m_Layer
@@ -201,6 +217,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -4381868667089195816, guid: b60ff49971ab20d4bb9fe729d787963d,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 7132832591711197925, guid: 9f9066a2203e25448a4678e26d517eb8,
+        type: 3}
+    - target: {fileID: -4381868667089195816, guid: b60ff49971ab20d4bb9fe729d787963d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6539933af421e084f9c69ad5684569e4, type: 2}
     - target: {fileID: -3638193520734090830, guid: b60ff49971ab20d4bb9fe729d787963d,
         type: 3}
       propertyPath: m_Layer
@@ -221,6 +248,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -1722305890445164951, guid: b60ff49971ab20d4bb9fe729d787963d,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2064501466151555939, guid: 9f9066a2203e25448a4678e26d517eb8,
+        type: 3}
+    - target: {fileID: -1722305890445164951, guid: b60ff49971ab20d4bb9fe729d787963d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6539933af421e084f9c69ad5684569e4, type: 2}
     - target: {fileID: -1693546492923637869, guid: b60ff49971ab20d4bb9fe729d787963d,
         type: 3}
       propertyPath: m_Layer
@@ -256,6 +294,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2245117735423030548, guid: b60ff49971ab20d4bb9fe729d787963d,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8048642384782627156, guid: 9f9066a2203e25448a4678e26d517eb8,
+        type: 3}
+    - target: {fileID: 2245117735423030548, guid: b60ff49971ab20d4bb9fe729d787963d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6539933af421e084f9c69ad5684569e4, type: 2}
     - target: {fileID: 2430876001099946699, guid: b60ff49971ab20d4bb9fe729d787963d,
         type: 3}
       propertyPath: m_Layer
@@ -301,6 +350,17 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6286466091052676466, guid: b60ff49971ab20d4bb9fe729d787963d,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -4617653922200268610, guid: 9f9066a2203e25448a4678e26d517eb8,
+        type: 3}
+    - target: {fileID: 6286466091052676466, guid: b60ff49971ab20d4bb9fe729d787963d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6539933af421e084f9c69ad5684569e4, type: 2}
     - target: {fileID: 6386480451222621022, guid: b60ff49971ab20d4bb9fe729d787963d,
         type: 3}
       propertyPath: m_Layer
