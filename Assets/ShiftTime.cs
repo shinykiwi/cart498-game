@@ -25,7 +25,7 @@ public class ShiftTime : MonoBehaviour
     [SerializeField] private int hourLength = 90;
 
     [Tooltip("Number of hours in a shift/night.")]
-    [SerializeField] private int hours = 6;
+    [SerializeField] private int hours = 8;
 
     void Start()
     {
