@@ -62,11 +62,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dfc08c90188302847afb04f628582097, type: 2}
+      objectReference: {fileID: 2100000, guid: 6a77e9c0e0b9d804babede37c3b4a33f, type: 2}
     - target: {fileID: 919132149155446097, guid: 48dfbc324b1591243af81428b3834586,
         type: 3}
       propertyPath: m_Name
-      value: doorway
+      value: Doorway
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
