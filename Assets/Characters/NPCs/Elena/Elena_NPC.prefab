@@ -55,7 +55,7 @@ MonoBehaviour:
   roomNumber: 106
   location: 0
   status: 0
-  image: {fileID: 21300000, guid: bb8566673378c6f428d7d64444964ce5, type: 3}
+  image: {fileID: 21300000, guid: 30791ceef4e9646448599c39ea8ceab5, type: 3}
   descantActor: {fileID: 11400000, guid: 076491d23fca17a4f9ac1bef4bb6d8f3, type: 2}
 --- !u!114 &6368735377783542625
 MonoBehaviour:
