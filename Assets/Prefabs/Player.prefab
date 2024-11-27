@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4562787691463708132}
   - component: {fileID: 749331932526864110}
   - component: {fileID: 349054712122735931}
+  - component: {fileID: 6281195561926154178}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -79,16 +80,7 @@ MonoBehaviour:
   SprintSpeed: 6
   RotationSpeed: 1
   SpeedChangeRate: 10
-  JumpHeight: 1.2
   Gravity: -15
-  JumpTimeout: 0.1
-  FallTimeout: 0.15
-  Grounded: 1
-  GroundedOffset: -0.14
-  GroundedRadius: 0.5
-  GroundLayers:
-    serializedVersion: 2
-    m_Bits: 1
   CinemachineCameraTarget: {fileID: 8130704277030154516}
   TopClamp: 89
   BottomClamp: -89
@@ -230,6 +222,18 @@ MonoBehaviour:
   rayDistance: 5
   mailbagObject: {fileID: 0}
   uiManager: {fileID: 0}
+--- !u!114 &6281195561926154178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2719281325684871973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf173ec962314628b84bdbbd358dfb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8130704277030154516
 GameObject:
   m_ObjectHideFlags: 0
