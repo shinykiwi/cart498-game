@@ -48,14 +48,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d096ce5b8eb465409778eb487fcebcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Princess Elena
-  age: 0
-  occupation: Nurse
-  newName: Jane Marsh
+  name: Sophia Lee
+  age: 35
+  occupation: Florist
+  newName: Riley Noon
   roomNumber: 106
   location: 0
   status: 0
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 3886999c9965e4d75881cf37245b46bf, type: 3}
   descantActor: {fileID: 11400000, guid: 076491d23fca17a4f9ac1bef4bb6d8f3, type: 2}
 --- !u!114 &903372444445775867
 MonoBehaviour:

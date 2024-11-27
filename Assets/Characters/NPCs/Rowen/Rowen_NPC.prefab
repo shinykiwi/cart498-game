@@ -49,13 +49,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Rowen O'Reilly
-  age: 0
-  occupation: 
+  age: 26
+  occupation: Hostess
   newName: Elizabeth Montgomery
   roomNumber: 102
   location: 0
   status: 0
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 9823d7b528c19b645a334fe22fe429a9, type: 3}
   descantActor: {fileID: 11400000, guid: 8cd14ce2f6674354b866dc753e23410a, type: 2}
 --- !u!114 &7534781379616834347
 MonoBehaviour:
