@@ -34,6 +34,26 @@ public class Npc : MonoBehaviour
     [SerializeField] private Sprite image;
     [SerializeField] private DescantActor descantActor;
 
+
+    public int GetAge()
+    {
+        return age;
+    }
+
+    public string GetOccupation()
+    {
+        return occupation;
+    }
+
+    public string GetLocation()
+    {
+        return location.ToString();
+    }
+
+    public string GetStatus()
+    {
+        return status.ToString();
+    }
     
 
     public string GetNewName()
@@ -104,6 +124,6 @@ public class Npc : MonoBehaviour
 
     public override string ToString()
     {
-        return "Talk to " + name;
+        return "Talk to " + newName;
     }
 }

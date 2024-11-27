@@ -101,7 +101,6 @@ public class Player : MonoBehaviour
             // Handling NPCs
             else if (hitData.collider.GetComponentInParent<Npc>() is { } npc)
             {
-                Debug.Log("npc");
                 hud.SetActionText(npc.ToString());
                 
                 // If E is pressed then do something

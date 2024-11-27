@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using Descant.Components;
 using TMPro;
 using UnityEngine;
@@ -8,6 +10,8 @@ using UnityEngine.UI;
 public class MailBag : MonoBehaviour
 {
     #region Serialized Fields
+    
+    [Header("Main panel")]
     [Tooltip("The title text used for displaying the title of the letter.")]
     [SerializeField] private TextMeshProUGUI title;
 
@@ -24,12 +28,22 @@ public class MailBag : MonoBehaviour
 
     [Tooltip("The button to press to read the case.")]
     [SerializeField] private GameObject readButton;
-
-    [Tooltip("Popup for the cases.")] [SerializeField]
-    private GameObject caseReader;
     
     [Tooltip("The descant actor of the player, to change letterCapacity value.")]
     [SerializeField] private DescantActor descantActor;
+    
+    [Header("Case reader")]
+    [Tooltip("Popup for the cases.")] [SerializeField]
+    private GameObject caseReader;
+
+    [SerializeField] private TextMeshProUGUI personName;
+    [SerializeField] private TextMeshProUGUI age;
+    [SerializeField] private TextMeshProUGUI occupation;
+    [SerializeField] private TextMeshProUGUI status;
+    [SerializeField] private TextMeshProUGUI location;
+    [SerializeField] private TextMeshProUGUI build;
+    [SerializeField] private Image casePhoto;
+    private TMP_Dropdown dropdown;
     #endregion
 
     #region Variables
@@ -68,6 +82,8 @@ public class MailBag : MonoBehaviour
     /// The currently selected slot that is displaying the contents of the letter.
     /// </summary>
     private Slot activeSlot = null;
+
+    private Npc[] npcs;
     #endregion
 
     #region Getters & Setters
@@ -87,9 +103,9 @@ public class MailBag : MonoBehaviour
         ui = GetComponentInChildren<Canvas>();
         slots = ui.GetComponentsInChildren<Slot>(); // Gets all of the slots found
         post = GetComponent<Volume>();
-
+        dropdown = GetComponentInChildren<TMP_Dropdown>();
+        npcs = FindObjectsOfType<Npc>();
         defaultPhoto = photo.sprite;
-        
         letterCapacity = slots.Length;
         letters = new Letter[letterCapacity];
 
@@ -102,6 +118,8 @@ public class MailBag : MonoBehaviour
         
         // Hiding the UI to begin with
         Hide();
+
+        HideCaseReader();
     }
 
     /// <summary>
@@ -153,6 +171,15 @@ public class MailBag : MonoBehaviour
         foreach (Slot slot in slots)
         {
             slot.GetComponent<Button>().onClick.AddListener(() => OnSlotClick(slot));
+        }
+
+        foreach (var t in npcs)
+        {
+            if (t.GetRoomNumber() != 0)
+            {
+                dropdown.options.Add(new TMP_Dropdown.OptionData("Subject " + t.GetRoomNumber()));
+            }
+                
         }
     }
     private void OnSlotClick(Slot slot)
@@ -217,6 +244,8 @@ public class MailBag : MonoBehaviour
     {
         caseReader.SetActive(true);
         // Should play paper shuffling sound
+        
+        UpdateCase();
     }
 
     private void HideCaseReader()
@@ -224,9 +253,39 @@ public class MailBag : MonoBehaviour
         caseReader.SetActive(false);
     }
 
-    public void UpdateCaseReader()
+    public void UpdateCaseReader(int i)
     {
         Debug.Log("Updating case reader");
+        
+
+    }
+
+    private Npc FindNpcByRoomNo(int i)
+    {
+        int parsedRoomNumber = int.Parse(dropdown.options[i].text.Split(" ")[1]);
+        Npc npcInQuestion = null;
+        foreach (Npc npc in npcs)
+        {
+            if (npc.GetRoomNumber() == parsedRoomNumber)
+            {
+                npcInQuestion = npc;
+            }
+        }
+
+        return npcInQuestion;
+    }
+    private void UpdateCase()
+    {
+        Npc npc = FindLetter(activeSlot).GetNpc();
+        if (npc)
+        {
+            personName.text = npc.GetNewName();
+            age.text = "Age: " + npc.GetAge().ToString();
+            occupation.text = "Occupation: " + npc.GetOccupation();
+            location.text = "Location: " + npc.GetLocation();
+            status.text = "Status: " + npc.GetStatus();
+            casePhoto.sprite = npc.GetImage();
+        }
     }
     
     private int FindLetterIdx(Slot slot)
@@ -270,7 +329,7 @@ public class MailBag : MonoBehaviour
     /// <summary>
     /// Hides the UI and the post processing.
     /// </summary>
-    public void Hide()
+    private void Hide()
     {
         ui.enabled = false;
         post.enabled = false;
@@ -279,7 +338,7 @@ public class MailBag : MonoBehaviour
     /// <summary>
     /// Shows the UI and the post processing.
     /// </summary>
-    public void Show()
+    private void Show()
     {
         ui.enabled = true;
         post.enabled = true;
