@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Autosave: 0
   Advanced: 1
-  PannedPosition: {x: -153, y: 240, z: 0}
-  ScrolledScale: {x: 0.25, y: 0.25, z: 1}
+  PannedPosition: {x: -3786.5, y: 580, z: 0}
+  ScrolledScale: {x: 0.57175326, y: 0.57175326, z: 1}
   Typewriter: 1
-  TypewriterSpeed: 2
+  TypewriterSpeed: 3
   ChoiceNodeID: 11
   ResponseNodeID: 22
   IfNodeID: 3
@@ -125,7 +125,7 @@ MonoBehaviour:
     Position: {x: 7196, y: -646}
     NodeComponents: []
     Comments: 
-    Response: They're on the table over there. Thanks.
+    Response: I'll let you go home early if you do them all correctly.
   IfNodes: []
   StartNode:
     Name: StartNode
@@ -150,7 +150,7 @@ MonoBehaviour:
   Groups:
   - Name: Answers
     ID: 0
-    Position: {x: 1607.0004, y: -665.5}
+    Position: {x: 1607, y: -665.5}
     Nodes:
     - Response
     - End
@@ -158,7 +158,7 @@ MonoBehaviour:
     Comments: 
   - Name: Start
     ID: 1
-    Position: {x: -67.00049, y: -179.50006}
+    Position: {x: -67, y: -179.5}
     Nodes:
     - Response
     - Start

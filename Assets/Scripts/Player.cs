@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
             }
             
             // Handling letters
-            else if (hitData.collider.GetComponentInParent<Letter>() is { } letter)
+            else if (hitData.collider.GetComponent<Letter>() is { } letter)
             {
                 // Prevents the following if the mailbag is already full
                 if (mailbag.IsFull()) return;
@@ -101,6 +101,7 @@ public class Player : MonoBehaviour
             // Handling NPCs
             else if (hitData.collider.GetComponentInParent<Npc>() is { } npc)
             {
+                Debug.Log("npc");
                 hud.SetActionText(npc.ToString());
                 
                 // If E is pressed then do something

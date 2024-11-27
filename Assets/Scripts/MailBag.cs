@@ -300,6 +300,8 @@ public class MailBag : MonoBehaviour
 
     public bool IsFull()
     {
+        Debug.Log("letter count " + letterCount);
+        Debug.Log("letter capcacity " + letterCapacity);
         return letterCount == letterCapacity;
     }
     
