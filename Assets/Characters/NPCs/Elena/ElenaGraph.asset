@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Autosave: 0
   Advanced: 1
-  PannedPosition: {x: -763.5, y: 155, z: 0}
-  ScrolledScale: {x: 0.57175326, y: 0.57175326, z: 1}
+  PannedPosition: {x: -499.5, y: 26, z: 0}
+  ScrolledScale: {x: 0.43232757, y: 0.43232757, z: 1}
   Typewriter: 1
   TypewriterSpeed: 3
   ChoiceNodeID: 9
-  ResponseNodeID: 12
-  IfNodeID: 3
-  EndNodeID: 9
+  ResponseNodeID: 13
+  IfNodeID: 4
+  EndNodeID: 11
   GroupID: 5
   ChoiceNodes:
   - Name: ChoiceNode
@@ -47,14 +47,13 @@ MonoBehaviour:
     Type: Response
     ID: 1
     Position: {x: 1632, y: -368}
-    NodeComponents:
-    - rid: 5730411145480110357
+    NodeComponents: []
     Comments: 
     Response: Oo yum! Thank you so much.
   - Name: ResponseNode
     Type: Response
     ID: 2
-    Position: {x: 1632, y: 0}
+    Position: {x: 2032.5, y: 156}
     NodeComponents: []
     Comments: 
     Response: Trying to escape my past. Same as everyone else, I guess.
@@ -70,22 +69,36 @@ MonoBehaviour:
   - Name: EndNode
     Type: End
     ID: 2
-    Position: {x: 1632, y: 330}
+    Position: {x: 1632, y: 735.5}
     NodeComponents: []
+    Comments: 
+  - Name: EndNode
+    Type: End
+    ID: 9
+    Position: {x: 2858, y: 347.5}
+    NodeComponents: []
+    Comments: 
+  - Name: EndNode
+    Type: End
+    ID: 10
+    Position: {x: 2182, y: -368}
+    NodeComponents:
+    - rid: 5730411145480110857
     Comments: 
   Groups:
   - Name: Answers
     ID: 0
-    Position: {x: 1607, y: -426.5}
+    Position: {x: 1607.0001, y: -426.49997}
     Nodes:
     - Response
     - Response
     - End
-    NodeIDs: 010000000200000002000000
+    - End
+    NodeIDs: 0100000002000000020000000a000000
     Comments: 
   - Name: Start
     ID: 1
-    Position: {x: -67, y: -179.5}
+    Position: {x: -67.00014, y: -179.5}
     Nodes:
     - Response
     - Start
@@ -113,6 +126,16 @@ MonoBehaviour:
     FromIndex: 0
     To: Choice
     ToID: 1
+  - From: Response
+    FromID: 1
+    FromIndex: 0
+    To: End
+    ToID: 10
+  - From: Response
+    FromID: 2
+    FromIndex: 0
+    To: End
+    ToID: 9
   - From: Start
     FromID: 0
     FromIndex: 0
@@ -131,7 +154,7 @@ MonoBehaviour:
         VariableName: progression
         ComparisonType: 5
         Comparison: 1
-    - rid: 5730411145480110357
+    - rid: 5730411145480110857
       type: {class: StatChange, ns: Descant.Components, asm: omch.descant.components}
       data:
         Collapsed: 0
