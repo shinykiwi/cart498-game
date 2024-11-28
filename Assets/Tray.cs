@@ -42,7 +42,6 @@ public class Tray : MonoBehaviour
             coffee.transform.localPosition = new Vector3(4.814f, 0, 0);
             coffee.Show();
             isEmpty = false;
-            
             npc.GiveCoffee();
         }
         else
