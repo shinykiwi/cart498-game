@@ -60,6 +60,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: f9c9901d8c18bbc47a4b2c68a98fdf1f,
         type: 3}
+      propertyPath: m_ImportantGI
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f9c9901d8c18bbc47a4b2c68a98fdf1f,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dfc08c90188302847afb04f628582097, type: 2}
@@ -139,7 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657e200df3eff0542a7e0a5570d9fe2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {fileID: 0}
   destinationName: DefaultDestination
   openDoor: {fileID: 5384829540959861682}
   closeDoor: {fileID: 5202377220007916086}
