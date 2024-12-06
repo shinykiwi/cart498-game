@@ -10,9 +10,7 @@ using UnityEngine.UI;
 public class Door : MonoBehaviour
 {
     [Tooltip("The scene that will be loaded into. Leave null if there's no destination to go to.")] 
-    [SerializeField]
-    private SceneAsset destination = null;
-
+    
     [SerializeField] private string destinationName = "DefaultDestination";
     
     [Tooltip("Sound effect that plays when going inside a building or room.")]
@@ -121,21 +119,8 @@ public class Door : MonoBehaviour
         TransportPlayer();
     }
 
-    /// <summary>
-    /// Loads the specified scene held in the destination variable.
-    /// </summary>
-    private void LoadScene()
-    {
-        SceneManager.LoadScene(destination.name, LoadSceneMode.Single);
-        
-    }
-
     private void TransportPlayer()
     {
-        // if (destination)
-        // {
-        //   LoadScene();  
-        // }
         
         Vector3 doorPos = transform.position;
         Vector3 newPos = new Vector3(doorPos.x + 2, 0, doorPos.z + 2);
