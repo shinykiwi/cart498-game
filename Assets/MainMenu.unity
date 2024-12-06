@@ -133,6 +133,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1870957314249996194, guid: 1fda59f3c26194bddbbeead5710542f1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2659123119220387734, guid: 1fda59f3c26194bddbbeead5710542f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -183,10 +188,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4415329688013530118, guid: 1fda59f3c26194bddbbeead5710542f1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000660135800936939, guid: 1fda59f3c26194bddbbeead5710542f1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212458833719996965, guid: 1fda59f3c26194bddbbeead5710542f1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805054146969114929, guid: 1fda59f3c26194bddbbeead5710542f1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9002320923304293185, guid: 1fda59f3c26194bddbbeead5710542f1,
         type: 3}
       propertyPath: m_Name
       value: DiningTableSet
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071409828508626433, guid: 1fda59f3c26194bddbbeead5710542f1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
