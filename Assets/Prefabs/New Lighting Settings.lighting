@@ -10,7 +10,11 @@ LightingSettings:
   serializedVersion: 6
   m_GIWorkflowMode: 1
   m_EnableBakedLightmaps: 1
+<<<<<<< HEAD
   m_EnableRealtimeLightmaps: 1
+=======
+  m_EnableRealtimeLightmaps: 0
+>>>>>>> parent of db6c6f5 (okay fixed build errors)
   m_RealtimeEnvironmentLighting: 1
   m_BounceScale: 1
   m_AlbedoBoost: 1
