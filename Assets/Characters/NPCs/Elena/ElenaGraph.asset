@@ -88,7 +88,7 @@ MonoBehaviour:
   Groups:
   - Name: Answers
     ID: 0
-    Position: {x: 1607.0001, y: -426.49997}
+    Position: {x: 1607.0001, y: -426.5}
     Nodes:
     - Response
     - Response

@@ -16549,6 +16549,11 @@ PrefabInstance:
       propertyPath: destinationName
       value: Room 118
       objectReference: {fileID: 0}
+    - target: {fileID: 7151081033410688309, guid: 26c5d132e885ed24da9d6880cd6f9e41,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e60c915bacd57824e926afa3562d8c68, type: 2}
     - target: {fileID: 8319998523691355738, guid: 26c5d132e885ed24da9d6880cd6f9e41,
         type: 3}
       propertyPath: m_LocalPosition.x
