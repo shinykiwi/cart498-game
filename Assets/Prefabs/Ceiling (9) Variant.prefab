@@ -68,6 +68,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling (9) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2078494502164578258, guid: 60ca50338e33fc24f80822b1af63bae0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

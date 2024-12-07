@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f9c9901d8c18bbc47a4b2c68a98fdf1f,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 126
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657e200df3eff0542a7e0a5570d9fe2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destination: {fileID: 0}
   destinationName: DefaultDestination
   openDoor: {fileID: 5384829540959861682}
   closeDoor: {fileID: 5202377220007916086}
